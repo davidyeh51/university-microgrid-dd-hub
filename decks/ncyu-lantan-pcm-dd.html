@@ -1,0 +1,1959 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>M01｜嘉義大學蘭潭校區微電網 PCM 標案盡職調查決策簡報 (115Q0803-1)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/deck.css">
+  <style>
+    /* Interactive SLD state styles for Slide 7 */
+    #sldSvg[data-mode="grid"] .only-island,
+    #sldSvg[data-mode="grid"] .only-s6 { opacity: 0.25; }
+    #sldSvg[data-mode="grid"] .pcc-closed { display: inline; }
+    #sldSvg[data-mode="grid"] .pcc-open { display: none; }
+    #sldSvg[data-mode="grid"] .tie-closed { display: none; }
+    #sldSvg[data-mode="grid"] .tie-open { display: inline; }
+
+    #sldSvg[data-mode="island"] .only-grid,
+    #sldSvg[data-mode="island"] .meter2-dim { opacity: 0.28; }
+    #sldSvg[data-mode="island"] .pcc-closed { display: none; }
+    #sldSvg[data-mode="island"] .pcc-open { display: inline; }
+    #sldSvg[data-mode="island"] .tie-closed { display: none; }
+    #sldSvg[data-mode="island"] .tie-open { display: inline; }
+    #sldSvg[data-mode="island"] .bess-hl { stroke: #DC2626 !important; stroke-width: 3 !important; }
+
+    #sldSvg[data-mode="s6"] .only-grid { opacity: 0.28; }
+    #sldSvg[data-mode="s6"] .pcc-closed { display: none; }
+    #sldSvg[data-mode="s6"] .pcc-open { display: inline; }
+    #sldSvg[data-mode="s6"] .tie-closed { display: inline; }
+    #sldSvg[data-mode="s6"] .tie-open { display: none; }
+    #sldSvg[data-mode="s6"] .s6-hl { stroke: #D97706 !important; stroke-width: 3 !important; }
+  </style>
+</head>
+<body>
+  <!-- Top Toolbar -->
+  <header class="deck-toolbar">
+    <div class="toolbar-left">
+      <a class="tb-btn" href="../index.html">← 返回戰情首頁</a>
+      <div class="deck-title-chip">
+        <span>M01｜嘉義大學蘭潭校區微電網 PCM 盡職調查</span>
+        <span class="badge">案號 115Q0803-1</span>
+      </div>
+    </div>
+    <div class="toolbar-center">
+      <button class="tb-btn" id="btnPrev" title="上一頁 (←)">◀ 上一頁</button>
+      <span id="slideCounter" style="font-variant-numeric:tabular-nums;font-weight:700;min-width:62px;text-align:center;">01 / 16</span>
+      <button class="tb-btn" id="btnNext" title="下一頁 (→)">下一頁 ▶</button>
+    </div>
+    <div class="toolbar-right">
+      <button class="timer-pill" id="timerPill" title="點擊開始/暫停 10 分鐘計時，雙擊重設 (快捷鍵 T)">▶ 10:00</button>
+      <button class="tb-btn" id="btnSearch" title="簡報內搜尋 (/)">🔍 搜尋</button>
+      <button class="tb-btn" id="btnOverview" title="投影片總覽 (G)">⊞ 目錄</button>
+      <button class="tb-btn" id="btnNotes" title="講者備忘稿 (N)">📝 備忘稿</button>
+      <button class="tb-btn" id="btnFullscreen" title="全螢幕">⛶</button>
+    </div>
+  </header>
+
+  <div class="progress-bar-track"><div class="progress-bar-fill" id="progressFill"></div></div>
+
+  <!-- Main Stage -->
+  <main class="deck-main">
+    <div class="stage-wrap" id="stageWrap">
+      <div class="slide-viewport" id="slideViewport">
+
+        <!-- ==================== SLIDE 1: COVER ==================== -->
+        <section class="slide cover active"
+          data-section="封面"
+          data-archetype="麥肯錫高階決策封面"
+          data-title="嘉義大學蘭潭校區微電網 PCM 標案盡職調查決策簡報"
+          data-pace="建議講解：20 秒"
+          data-conclusion="歡迎各位參與嘉義大學蘭潭校區微電網 PCM 標案（案號 115Q0803-1）10 分鐘盡職調查簡報。"
+          data-detail="本簡報嚴格依據嘉義大學 115Q0803-1 招標文件（契約、投標須知、評選須知、需求書及附件 18、19）與盡職調查報告萃取，涵蓋三道 Go/No-Go 閘門、電力與消防架構、48 小時驗證、時程落差與搶標攻防。"
+          data-transition="接下來我們直接以麥肯錫「結論先行」原則，看總監對本案的核心戰略判斷。">
+          <div style="display:grid;grid-template-columns:1.35fr 1fr;gap:36px;flex:1;align-items:center;">
+            <div style="display:flex;flex-direction:column;gap:18px;">
+              <div style="display:flex;gap:10px;align-items:center;">
+                <span style="background:rgba(0,169,244,0.2);color:#38BDF8;border:1px solid rgba(56,189,248,0.45);padding:4px 12px;border-radius:999px;font-size:12px;font-weight:700;letter-spacing:1px;">MEETING M01 · 標案盡職調查報告</span>
+                <span style="background:rgba(217,119,6,0.25);color:#FBBF24;border:1px solid rgba(251,191,36,0.5);padding:4px 12px;border-radius:999px;font-size:12px;font-weight:700;">有條件 Go · 先過三道閘門</span>
+              </div>
+              <h1 style="font-size:40px;font-weight:900;line-height:1.22;letter-spacing:-0.5px;">
+                國立嘉義大學蘭潭校區<br>
+                <span style="color:#38BDF8;">微電網 PCM 標案</span>盡職調查
+              </h1>
+              <p style="font-size:16px;color:#CBD5E1;line-height:1.65;max-width:640px;">
+                蘭潭校區電力韌性校園微電網建置委託規劃、專案管理及監造技術服務（案號 <strong style="color:#fff;">115Q0803-1</strong>）── 647 萬技術服務與 1.32 億後續統包之戰略取捨、技術缺口解析與評選搶標全案
+              </p>
+              <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:8px;">
+                <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.14);border-radius:8px;padding:12px 14px;">
+                  <div style="font-size:11px;color:#94A3B8;">本案固定預算（含稅）</div>
+                  <div style="font-size:24px;font-weight:800;color:#38BDF8;margin-top:2px;">647 萬元</div>
+                  <div style="font-size:11px;color:#CBD5E1;">服務 497 萬＋量測 150 萬</div>
+                </div>
+                <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(251,191,36,0.35);border-radius:8px;padding:12px 14px;">
+                  <div style="font-size:11px;color:#FDE68A;">後續統包關聯商機</div>
+                  <div style="font-size:24px;font-weight:800;color:#FBBF24;margin-top:2px;">1.32 億元</div>
+                  <div style="font-size:11px;color:#FDE68A;">利益迴避・不得重複參與</div>
+                </div>
+                <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.14);border-radius:8px;padding:12px 14px;">
+                  <div style="font-size:11px;color:#94A3B8;">災時孤島核心承諾</div>
+                  <div style="font-size:24px;font-weight:800;color:#34D399;margin-top:2px;">48 小時</div>
+                  <div style="font-size:11px;color:#CBD5E1;">三館 4,691 人不中斷供電</div>
+                </div>
+              </div>
+              <div style="font-size:12.5px;color:#94A3B8;margin-top:6px;">
+                報告日期：2026 年 11 月 26 日（民國 115 年 11 月 26 日） ｜ 主編：David Yeh ｜ 簡報時長：10 分鐘完整版（16 頁）
+              </div>
+            </div>
+
+            <!-- Cover Original SVG Topology -->
+            <div style="height:490px;display:flex;align-items:center;justify-content:center;">
+              <svg viewBox="0 0 460 460" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;">
+                <defs>
+                  <linearGradient id="covBus" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stop-color="#00A9F4"/>
+                    <stop offset="100%" stop-color="#38BDF8"/>
+                  </linearGradient>
+                  <radialGradient id="covGlow" cx="50%" cy="50%" r="50%">
+                    <stop offset="0%" stop-color="#00A9F4" stop-opacity="0.28"/>
+                    <stop offset="100%" stop-color="#051C2C" stop-opacity="0"/>
+                  </radialGradient>
+                </defs>
+                <circle cx="230" cy="230" r="210" fill="url(#covGlow)"/>
+                <circle cx="230" cy="230" r="172" fill="none" stroke="rgba(56,189,248,0.22)" stroke-width="1.5" stroke-dasharray="6 6"/>
+                <circle cx="230" cy="230" r="115" fill="none" stroke="rgba(251,191,36,0.28)" stroke-width="1.5"/>
+
+                <!-- Connection lines -->
+                <line x1="230" y1="230" x2="230" y2="66" stroke="#38BDF8" stroke-width="2.5"/>
+                <line x1="230" y1="230" x2="86" y2="148" stroke="#FBBF24" stroke-width="2.5"/>
+                <line x1="230" y1="230" x2="374" y2="148" stroke="#34D399" stroke-width="2.5"/>
+                <line x1="230" y1="230" x2="96" y2="332" stroke="#F97316" stroke-width="2.5"/>
+                <line x1="230" y1="230" x2="230" y2="386" stroke="#F97316" stroke-width="2.5"/>
+                <line x1="230" y1="230" x2="364" y2="332" stroke="#F97316" stroke-width="2.5"/>
+
+                <!-- Center Hub: Main Substation -->
+                <rect x="148" y="182" width="164" height="96" rx="14" fill="#0B2942" stroke="url(#covBus)" stroke-width="3"/>
+                <text x="230" y="212" text-anchor="middle" fill="#38BDF8" font-size="12" font-weight="700">11.4 kV 孤島中樞</text>
+                <text x="230" y="236" text-anchor="middle" fill="#FFFFFF" font-size="16" font-weight="800">蘭潭總變電站</text>
+                <text x="230" y="258" text-anchor="middle" fill="#94A3B8" font-size="11">AC Hybrid · 黑啟動構網</text>
+
+                <!-- Top Node: Grid PCC -->
+                <rect x="155" y="26" width="150" height="50" rx="10" fill="#1E293B" stroke="#64748B" stroke-width="1.5"/>
+                <text x="230" y="48" text-anchor="middle" fill="#E2E8F0" font-size="12.5" font-weight="700">台電電號一 PCC</text>
+                <text x="230" y="65" text-anchor="middle" fill="#94A3B8" font-size="10.5">≦200 ms 解聯 · 汰換 700 m</text>
+
+                <!-- Left Top: PV -->
+                <rect x="18" y="114" width="136" height="62" rx="10" fill="rgba(217,119,6,0.18)" stroke="#FBBF24" stroke-width="1.8"/>
+                <text x="86" y="139" text-anchor="middle" fill="#FDE68A" font-size="13" font-weight="800">太陽光電 800 kWp</text>
+                <text x="86" y="158" text-anchor="middle" fill="#FEF3C7" font-size="10.5">電號一 600 ＋ 電號二 200</text>
+
+                <!-- Right Top: BESS + Diesel -->
+                <rect x="304" y="114" width="142" height="62" rx="10" fill="rgba(5,150,105,0.2)" stroke="#34D399" stroke-width="1.8"/>
+                <text x="375" y="139" text-anchor="middle" fill="#6EE7B7" font-size="13" font-weight="800">BESS ＋ 柴油機</text>
+                <text x="375" y="158" text-anchor="middle" fill="#D1FAE5" font-size="10.5">500kW/1MWh ＋ 2×250kVA</text>
+
+                <!-- Bottom 3 Shelters -->
+                <rect x="26" y="310" width="126" height="54" rx="10" fill="rgba(249,115,22,0.18)" stroke="#FB923C" stroke-width="1.8"/>
+                <text x="89" y="333" text-anchor="middle" fill="#FFFFFF" font-size="13" font-weight="800">行政中心</text>
+                <text x="89" y="351" text-anchor="middle" fill="#FED7AA" font-size="10.5">第一級負荷 · ≦100 ms</text>
+
+                <rect x="167" y="364" width="126" height="54" rx="10" fill="rgba(249,115,22,0.18)" stroke="#FB923C" stroke-width="1.8"/>
+                <text x="230" y="387" text-anchor="middle" fill="#FFFFFF" font-size="13" font-weight="800">瑞穗館</text>
+                <text x="230" y="405" text-anchor="middle" fill="#FED7AA" font-size="10.5">避難收容 2,560 人</text>
+
+                <rect x="308" y="310" width="126" height="54" rx="10" fill="rgba(249,115,22,0.18)" stroke="#FB923C" stroke-width="1.8"/>
+                <text x="371" y="333" text-anchor="middle" fill="#FFFFFF" font-size="13" font-weight="800">嘉禾館</text>
+                <text x="371" y="351" text-anchor="middle" fill="#FED7AA" font-size="10.5">避難收容 2,131 人</text>
+              </svg>
+            </div>
+          </div>
+          <footer class="slide-footer">
+            <span>資料來源：國立嘉義大學 115Q0803-1 招標文件、附件 18／19 公開版及盡職調查報告（2026-11-26）</span>
+            <span>大學微電網標案盡職調查暨決策簡報平台 · 01 / 16</span>
+          </footer>
+        </section>
+
+        <!-- ==================== SLIDE 2: EXECUTIVE SUMMARY ==================== -->
+        <section class="slide"
+          data-section="執行摘要"
+          data-archetype="版型 1：一對一論法"
+          data-title="總監結論：本案為 647 萬 PCM 而非 1.32 億統包，建議「有條件 Go，先過三道閘門」"
+          data-pace="建議講解：40 秒"
+          data-conclusion="總監對本案的核心結論是「有條件 Go，先過三道閘門」，因為 647 萬 PCM 與 1.32 億後續統包存在嚴格利益迴避互斥。"
+          data-detail="本案採固定費用 647 萬、價格不評分，勝負取決於服務建議書、團隊與 12 分鐘簡報。對進能服／進金生集團而言，關鍵決策不是『能不能做 PCM』，而是『做 PCM 是否會迫使集團放棄 20 倍規模的 1.32 億元統包與 PCS/BESS 供貨機會』。"
+          data-transition="接下來我們拆解決定 Go 或 No-Go 的三道硬閘門與招標條文依據。">
+          <header class="slide-header">
+            <div class="slide-meta-row">
+              <span class="slide-kicker"><span class="dot"></span>01 · 執行摘要與集團戰略定位</span>
+              <span class="archetype-pill">版型 1：一對一論法</span>
+            </div>
+            <h2 class="action-title">本案為 647 萬 PCM 而非 1.32 億統包，建議<span class="hl-amber">「有條件 Go，先過三道閘門」</span></h2>
+          </header>
+
+          <div class="slide-body">
+            <div class="grid-60-40">
+              <!-- Original SVG: Strategic Value Comparison -->
+              <div class="svg-box" style="flex-direction:column;align-items:stretch;padding:16px;">
+                <div style="font-size:13px;font-weight:800;color:#051C2C;margin-bottom:8px;">集團商機規模與利益迴避互斥結構（單位：新台幣萬元）</div>
+                <svg viewBox="0 0 680 355" xmlns="http://www.w3.org/2000/svg">
+                  <!-- Grid lines -->
+                  <line x1="90" y1="40" x2="90" y2="270" stroke="#CBD5E1" stroke-width="1.5"/>
+                  <line x1="90" y1="270" x2="650" y2="270" stroke="#051C2C" stroke-width="2"/>
+                  <line x1="90" y1="193" x2="650" y2="193" stroke="#E2E8F0" stroke-dasharray="4 4"/>
+                  <line x1="90" y1="117" x2="650" y2="117" stroke="#E2E8F0" stroke-dasharray="4 4"/>
+                  <line x1="90" y1="40" x2="650" y2="40" stroke="#E2E8F0" stroke-dasharray="4 4"/>
+
+                  <text x="80" y="274" text-anchor="end" font-size="11" fill="#64748B">0</text>
+                  <text x="80" y="197" text-anchor="end" font-size="11" fill="#64748B">5,000</text>
+                  <text x="80" y="121" text-anchor="end" font-size="11" fill="#64748B">10,000</text>
+                  <text x="80" y="44" text-anchor="end" font-size="11" fill="#64748B">15,000</text>
+
+                  <!-- Bar 1: PCM 647萬 -->
+                  <rect x="145" y="259" width="120" height="11" rx="2" fill="#94A3B8"/>
+                  <text x="205" y="246" text-anchor="middle" font-size="16" font-weight="800" fill="#475569">647 萬</text>
+                  <text x="205" y="227" text-anchor="middle" font-size="11" font-weight="700" fill="#64748B">（僅占總經費 4.3%）</text>
+                  <text x="205" y="292" text-anchor="middle" font-size="13" font-weight="800" fill="#051C2C">本案：PCM 技術服務</text>
+                  <text x="205" y="310" text-anchor="middle" font-size="11" fill="#64748B">固定費用・價格不評分</text>
+                  <text x="205" y="326" text-anchor="middle" font-size="11" fill="#64748B">服務 497 萬＋量測 150 萬</text>
+
+                  <!-- Mutual Exclusion Callout -->
+                  <line x1="278" y1="165" x2="402" y2="165" stroke="#DC2626" stroke-width="2.5" stroke-dasharray="5 4"/>
+                  <rect x="288" y="136" width="104" height="58" rx="8" fill="#FEF2F2" stroke="#DC2626" stroke-width="2"/>
+                  <text x="340" y="159" text-anchor="middle" font-size="12.5" font-weight="800" fill="#B91C1C">嚴格互斥</text>
+                  <text x="340" y="176" text-anchor="middle" font-size="10.5" fill="#991B1B">須知第 83.4 點</text>
+                  <text x="340" y="189" text-anchor="middle" font-size="10" fill="#991B1B">關係企業禁止投統包</text>
+
+                  <!-- Bar 2: EPC 13,227萬 -->
+                  <rect x="420" y="67" width="150" height="203" rx="4" fill="#051C2C"/>
+                  <rect x="420" y="67" width="150" height="12" rx="2" fill="#D97706"/>
+                  <text x="495" y="55" text-anchor="middle" font-size="22" font-weight="900" fill="#D97706">13,227 萬（1.32 億）</text>
+                  <text x="495" y="160" text-anchor="middle" font-size="28" font-weight="900" fill="#FFFFFF">20.4×</text>
+                  <text x="495" y="184" text-anchor="middle" font-size="12" font-weight="700" fill="#38BDF8">商機規模倍數</text>
+                  <text x="495" y="292" text-anchor="middle" font-size="13" font-weight="800" fill="#051C2C">後續標案：微電網統包工程</text>
+                  <text x="495" y="310" text-anchor="middle" font-size="11" fill="#64748B">發包工程費 132,268,500 元</text>
+                  <text x="495" y="326" text-anchor="middle" font-size="11" fill="#64748B">含 800kWp 光電＋1MWh 儲能＋EMS</text>
+                </svg>
+              </div>
+
+              <!-- Right Strategy Decision Column -->
+              <div style="display:flex;flex-direction:column;gap:12px;">
+                <div class="card card-navy" style="flex:1;">
+                  <div class="card-title"><span>戰略二分決策路徑</span><span class="tag tag-amber">高層必拍板</span></div>
+                  <div style="display:flex;flex-direction:column;gap:10px;font-size:12.5px;line-height:1.55;">
+                    <div style="background:rgba(220,38,38,0.16);border:1px solid rgba(248,113,113,0.45);border-radius:6px;padding:10px;">
+                      <div style="font-weight:800;color:#FCA5A5;margin-bottom:3px;">路徑 A｜放棄 PCM，全力搶攻 1.32 億統包</div>
+                      <div style="color:#E2E8F0;">若集團（含進金生實業 PCS／BESS 原廠）擬以 EPC 或主要設備供應商爭取統包，<strong>應立即 No-Go 本 PCM 案</strong>，避免鎖死 1.32 億商機與引發綁規格爭議。</div>
+                    </div>
+                    <div style="background:rgba(5,150,105,0.18);border:1px solid rgba(52,211,153,0.45);border-radius:6px;padding:10px;">
+                      <div style="font-weight:800;color:#6EE7B7;margin-bottom:3px;">路徑 B｜投標 PCM，建立全國校園實績門票</div>
+                      <div style="color:#E2E8F0;">若進能服定位為獨立技術服務品牌，具電機技顧資格且與設備廠<strong>無關係企業連結</strong>，本案是切入教育部「大專校院電力韌性校園」PCM 市場的關鍵入場券。</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="callout callout-amber">
+                  <strong>待立即查證（政府電子採購網 115Q0803-1）：</strong><br>
+                  截止投標日、開標日、釋疑期限（等標期 1/4）與公開之 7 人評選委員名單未載於所附文件，須今日查明回填。
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <footer class="slide-footer">
+            <span>Source：盡職調查報告「總監結論」、投標須知第 18／64／83.4 點、契約第 8 條</span>
+            <span>02 / 16</span>
+          </footer>
+        </section>
+
+        <!-- ==================== SLIDE 3: THREE GATES ==================== -->
+        <section class="slide"
+          data-section="三道閘門"
+          data-archetype="版型 2：並列論法"
+          data-title="任一閘門未過即 No-Go：投標資格、利益迴避與固定總價現金流為三大硬約束"
+          data-pace="建議講解：40 秒"
+          data-conclusion="在投入任何建議書撰寫工時前，團隊必須先通過三道硬閘門查核，只要任何一道不通過就是 No-Go。"
+          data-detail="第一道是資格硬門檻，不允許共同投標，進能服若非電機工程技術顧問公司就無法以自身名義投標；第二道是利益迴避，涵蓋關係企業與量測驗證方；第三道是財務結構，497 萬服務費卻要養長駐 PM 與監造直到統包驗收再加一年督導，且 60% 收款綁統包進度。"
+          data-transition="確認三道閘門後，我們來看本案七大服務範疇與 647 萬的付款里程碑結構。">
+          <header class="slide-header">
+            <div class="slide-meta-row">
+              <span class="slide-kicker"><span class="dot"></span>02 · GO / NO-GO 三道硬閘門診斷</span>
+              <span class="archetype-pill">版型 2：並列論法</span>
+            </div>
+            <h2 class="action-title">任一閘門未過即 <span class="hl-red">No-Go</span>：資格、利益迴避與現金流構成三大硬約束</h2>
+          </header>
+
+          <div class="slide-body">
+            <!-- Gate Flow Ribbon SVG -->
+            <div style="height:68px;">
+              <svg viewBox="0 0 1190 64" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;">
+                <rect x="0" y="6" width="350" height="50" rx="8" fill="#051C2C"/>
+                <text x="175" y="28" text-anchor="middle" fill="#38BDF8" font-size="12" font-weight="800">GATE 1 · 資格審查</text>
+                <text x="175" y="46" text-anchor="middle" fill="#FFFFFF" font-size="13.5" font-weight="700">電機技顧／事務所・禁共同投標</text>
+                <polygon points="362,31 384,18 384,44" fill="#DC2626" transform="rotate(180 373 31)"/>
+
+                <rect x="396" y="6" width="370" height="50" rx="8" fill="#991B1B"/>
+                <text x="581" y="28" text-anchor="middle" fill="#FECACA" font-size="12" font-weight="800">GATE 2 · 利益迴避（最高風險）</text>
+                <text x="581" y="46" text-anchor="middle" fill="#FFFFFF" font-size="13.5" font-weight="700">關係企業禁投統包與供貨</text>
+                <polygon points="778,31 800,18 800,44" fill="#D97706" transform="rotate(180 789 31)"/>
+
+                <rect x="812" y="6" width="378" height="50" rx="8" fill="#B45309"/>
+                <text x="1001" y="28" text-anchor="middle" fill="#FDE68A" font-size="12" font-weight="800">GATE 3 · 損益與現金流</text>
+                <text x="1001" y="46" text-anchor="middle" fill="#FFFFFF" font-size="13.5" font-weight="700">497 萬無封頂履約・60% 綁統包</text>
+              </svg>
+            </div>
+
+            <div class="grid-3">
+              <!-- Gate 1 -->
+              <div class="card" style="border-top:4px solid #051C2C;">
+                <div class="card-title"><span>閘門 1｜投標資格</span><span class="tag tag-navy">須知第 18、64 點</span></div>
+                <ul class="bullet-list" style="flex:1;">
+                  <li><strong>法定資格</strong>：電機技師事務所，或營業項目含電機工程之<strong>工程技術顧問公司</strong>，並檢附執業電機技師執照及公會會員證。</li>
+                  <li><strong>嚴格限制</strong>：<strong>不允許共同投標</strong>，且不得為陸資企業。</li>
+                  <li><strong>關鍵人員</strong>：計畫主持人須具執業電機技師，且全員須為依法投保員工。</li>
+                </ul>
+                <div class="callout callout-crimson" style="font-size:12px;">
+                  <strong>未過後果：</strong>進能服若非技顧公司，既無法以自身名義投標，也不能與技師事務所組聯盟參標。
+                </div>
+              </div>
+
+              <!-- Gate 2 -->
+              <div class="card" style="border-top:4px solid #DC2626;">
+                <div class="card-title"><span>閘門 2｜利益迴避</span><span class="tag tag-red">須知 83.4 / 契約 8</span></div>
+                <ul class="bullet-list" style="flex:1;">
+                  <li><strong>統包排除</strong>：得標廠商及其負責人、<strong>關係企業</strong>不得參與後續 1.32 億統包之投標、分包或擔任顧問。</li>
+                  <li><strong>設備排除</strong>：量測驗證執行方不得與統包主要設備供應商有關係企業連結。</li>
+                  <li><strong>綠規格疑慮</strong>：本案須執行「構網型 PCS 市場調查」，具原廠背景易遭質疑綁規格。</li>
+                </ul>
+                <div class="callout callout-crimson" style="font-size:12px;">
+                  <strong>未過後果：</strong>若與進金生實業（PCS／儲能原廠）屬關係企業，得標 647 萬即令集團退出 1.32 億統包與供貨。
+                </div>
+              </div>
+
+              <!-- Gate 3 -->
+              <div class="card" style="border-top:4px solid #D97706;">
+                <div class="card-title"><span>閘門 3｜損益與現金流</span><span class="tag tag-amber">契約第 5、7、14 條</span></div>
+                <ul class="bullet-list" style="flex:1;">
+                  <li><strong>人力重擔</strong>：服務費 497 萬須負擔 1 名長駐 PM、施工期 1 名監造、技師簽證及 EMS／資安審查。</li>
+                  <li><strong>履約無封頂</strong>：履約至統包驗收合格，<strong>另加保固督導 1 年（不另計價）</strong>，無薪資指數上限。</li>
+                  <li><strong>收款錯配</strong>：服務費 60%（監造 40%＋尾款 20%）完全綁定統包施工進度與驗收。</li>
+                </ul>
+                <div class="callout callout-amber" style="font-size:12px;">
+                  <strong>未過後果：</strong>統包若流標或延宕 6 個月，估算多支出 <strong>70～90 萬元</strong>人力成本，同時現金流凍結。
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <footer class="slide-footer">
+            <span>Source：12-投標須知第 18、64、83.4 點；11-契約第 5、7、8、14 條；盡職調查報告第 1 頁</span>
+            <span>03 / 16</span>
+          </footer>
+        </section>
+
+        <!-- ==================== SLIDE 4: SCOPE & PAYMENT ==================== -->
+        <section class="slide"
+          data-section="專案範疇與財務"
+          data-archetype="版型 3：結合論法"
+          data-title="七大服務範疇覆蓋全生命週期，惟 60% 服務費收款高度綁定統包施工進度"
+          data-pace="建議講解：40 秒"
+          data-conclusion="本案涵蓋規劃到量測驗證七大塊工作，但 497 萬服務費中有高達 60% 押在統包施工與驗收尾款，現金流高度依賴統包商表現。"
+          data-detail="整個預算 647 萬元拆為兩包：服務費 497 萬分五期給付，前期規劃到招決標合計只拿 40%，後面監造 40% 加尾款 20% 全部看統包進度；另 150 萬量測驗證費必須自行量測不得由統包代量，80% 在三階段綜合報告核定後付，20% 在 M&V 初期成效報告核定後付。"
+          data-transition="清楚錢怎麼收之後，我們來看看評選怎麼得分、哪一項是同分決勝的關鍵。">
+          <header class="slide-header">
+            <div class="slide-meta-row">
+              <span class="slide-kicker"><span class="dot"></span>03 · 服務範疇與 647 萬元付款結構</span>
+              <span class="archetype-pill">版型 3：結合論法</span>
+            </div>
+            <h2 class="action-title">七大範疇貫穿全案，惟 <span class="hl-amber">60% 服務費（298.2 萬）</span>高度綁定統包施工進度</h2>
+          </header>
+
+          <div class="slide-body">
+            <div class="kpi-strip">
+              <div class="kpi-box"><div class="k-label">招標方式</div><div class="k-val" style="font-size:16px;">限制性招標公開評選</div><div class="k-sub">採購法第 22 條第 1 項第 9 款・序位法</div></div>
+              <div class="kpi-box"><div class="k-label">總預算（固定含稅）</div><div class="k-val">647 萬元</div><div class="k-sub">無押標金・標價不得高於預算</div></div>
+              <div class="kpi-box hl"><div class="k-label">履約保證金與保險</div><div class="k-val">25 萬元</div><div class="k-sub">決標 14 日內繳・須投保專業責任險</div></div>
+              <div class="kpi-box"><div class="k-label">補助計畫期程</div><div class="k-val" style="font-size:17px;">115/8/1～117/1/31</div><div class="k-sub">涉補助款付款期限 30 工作天</div></div>
+            </div>
+
+            <div class="grid-60-40">
+              <!-- Payment Milestone SVG -->
+              <div class="svg-box" style="flex-direction:column;align-items:stretch;padding:14px;">
+                <div style="font-size:12.5px;font-weight:800;color:#051C2C;margin-bottom:6px;">647 萬元分期請款結構拆解（灰／藍：前期可控 ｜ 橘紅：綁定統包進度）</div>
+                <svg viewBox="0 0 680 310" xmlns="http://www.w3.org/2000/svg">
+                  <!-- Section A: 服務費 497萬 -->
+                  <text x="10" y="22" font-size="12.5" font-weight="800" fill="#051C2C">A. 技術服務費：497 萬元（76.8%）</text>
+                  <!-- Stacked bar total width 640 (x=10..650) -->
+                  <!-- 20% = 128px, 15% = 96px, 5% = 32px, 40% = 256px, 20% = 128px -->
+                  <rect x="10" y="34" width="126" height="58" rx="4" fill="#1E3A8A"/>
+                  <text x="73" y="58" text-anchor="middle" fill="#fff" font-size="13" font-weight="800">規劃 20%</text>
+                  <text x="73" y="76" text-anchor="middle" fill="#BFDBFE" font-size="11">99.4 萬</text>
+
+                  <rect x="140" y="34" width="94" height="58" rx="4" fill="#0284C7"/>
+                  <text x="187" y="58" text-anchor="middle" fill="#fff" font-size="12.5" font-weight="800">設審 15%</text>
+                  <text x="187" y="76" text-anchor="middle" fill="#E0F2FE" font-size="11">74.6 萬</text>
+
+                  <rect x="238" y="34" width="46" height="58" rx="4" fill="#64748B"/>
+                  <text x="261" y="58" text-anchor="middle" fill="#fff" font-size="11" font-weight="800">5%</text>
+                  <text x="261" y="76" text-anchor="middle" fill="#E2E8F0" font-size="10">24.9萬</text>
+
+                  <rect x="288" y="34" width="234" height="58" rx="4" fill="#D97706"/>
+                  <text x="405" y="58" text-anchor="middle" fill="#fff" font-size="14" font-weight="800">監造 40%（進度 25/50/75/100% 各 10%）</text>
+                  <text x="405" y="76" text-anchor="middle" fill="#FEF3C7" font-size="11.5">198.8 萬</text>
+
+                  <rect x="526" y="34" width="134" height="58" rx="4" fill="#DC2626"/>
+                  <text x="593" y="58" text-anchor="middle" fill="#fff" font-size="13" font-weight="800">尾款 20%</text>
+                  <text x="593" y="76" text-anchor="middle" fill="#FEE2E2" font-size="11">99.4 萬</text>
+
+                  <!-- Brackets -->
+                  <path d="M10,102 L10,112 L284,112 L284,102" fill="none" stroke="#1E3A8A" stroke-width="1.8"/>
+                  <text x="147" y="128" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1E3A8A">前期合計 40%（198.8 萬）｜設審 30% 綁台電審查意見書</text>
+
+                  <path d="M288,102 L288,112 L660,112 L660,102" fill="none" stroke="#DC2626" stroke-width="2"/>
+                  <text x="474" y="128" text-anchor="middle" font-size="12" font-weight="800" fill="#DC2626">後期 60%（298.2 萬）完全綁定統包施工、驗收與設備登記</text>
+
+                  <!-- Section B: 量測驗證費 150萬 -->
+                  <text x="10" y="172" font-size="12.5" font-weight="800" fill="#051C2C">B. 量測驗證費：150 萬元（23.2%，須自行量測、嚴禁統包代量）</text>
+
+                  <rect x="10" y="184" width="516" height="54" rx="4" fill="#059669"/>
+                  <text x="268" y="207" text-anchor="middle" fill="#fff" font-size="13.5" font-weight="800">三階段綜合判定報告核定：80%（120 萬元）</text>
+                  <text x="268" y="225" text-anchor="middle" fill="#D1FAE5" font-size="11">Class A 電力品質・48h 外推・柴油機 25~100% 假負載油耗・技師簽署</text>
+
+                  <rect x="530" y="184" width="130" height="54" rx="4" fill="#0D9488"/>
+                  <text x="595" y="207" text-anchor="middle" fill="#fff" font-size="13" font-weight="800">M&amp;V：20%</text>
+                  <text x="595" y="225" text-anchor="middle" fill="#CCFBF1" font-size="11">30 萬（觀察期後）</text>
+
+                  <!-- Bond release note -->
+                  <rect x="10" y="254" width="650" height="44" rx="6" fill="#F1F5F9" stroke="#CBD5E1"/>
+                  <text x="24" y="273" font-size="11.5" font-weight="800" fill="#051C2C">履約保證金 25 萬發還節點：</text>
+                  <text x="180" y="273" font-size="11.5" fill="#334155">統包驗收合格發還 75%（18.75 萬）➔ 1 年保固督導期滿無待解決事項發還 25%（6.25 萬）</text>
+                  <text x="24" y="290" font-size="11" fill="#64748B">備註：付款得配合教育部補助款撥付進度；統包驗收後尚須無償履行 1 年保固督導義務。</text>
+                </svg>
+              </div>
+
+              <!-- 7 Scopes list -->
+              <div class="card">
+                <div class="card-title"><span>七大核心服務範疇</span><span class="tag tag-blue">14-需求書</span></div>
+                <ol style="padding-left:18px;display:flex;flex-direction:column;gap:6px;font-size:12px;line-height:1.45;color:#1E293B;">
+                  <li><strong>規劃（30 日交報告）</strong>：高壓現況與第 3 變電站 CT/PT 查證、48h 能量平衡、單線圖與真值表、保護協調初算、台電首洽會勘、構網型 PCS 市調、統包需求書草案。</li>
+                  <li><strong>招決標諮詢</strong>：統包招標、釋疑回覆、資格審查與評選專業諮詢。</li>
+                  <li><strong>統包設計審查</strong>：潮流／短路／暫態／孤島轉態模擬、保護協調、MGCC/EMS 控制邏輯、IEC 62443 SL2 資安、非陸牌證明。</li>
+                  <li><strong>施工督導與監造</strong>：檢驗停留點、FAT 工廠見證、停電改接管控、每日監造報表。</li>
+                  <li><strong>測試驗證與驗收</strong>：見證 14 項現場測試與 48h 三階段合併驗證。</li>
+                  <li><strong>EMS 交付把關</strong>：完整可編譯原始碼、API 實測、第三方滲透測試報告。</li>
+                  <li><strong>獨立量測驗證</strong>：自有／租用 Class A 儀器實測電力品質、儲能／光電性能與 IPMVP M&amp;V，執業技師簽署。</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+
+          <footer class="slide-footer">
+            <span>Source：11-契約第 5 條、14-需求書、盡職調查報告「一、專案摘要」</span>
+            <span>04 / 16</span>
+          </footer>
+        </section>
+
+        <!-- ==================== SLIDE 5: EVALUATION SCORING ==================== -->
+        <section class="slide"
+          data-section="評選規則"
+          data-archetype="版型 1：一對一論法"
+          data-title="價格不評分、序位法決勝：「專案管理、監造及測試驗證（25 分）」為同分關鍵勝負手"
+          data-pace="建議講解：35 秒"
+          data-conclusion="本案價格不納入評分，建議以預算全額 647 萬元投標，並將 65% 的簡報火力鎖定在前三大配分項目，特別是佔 25 分的同分決勝項。"
+          data-detail="評選採序位法，總分平均須達 75 分以上，7 位評選委員名單已於採購網公開。當序位合計相同時，直接以配分最高（25 分）的『專案管理、監造及測試驗證執行計畫』分數決勝負。服務建議書上限 80 頁、印製 10 份，簡報 12 分鐘且強制計畫主持人親簡。"
+          data-transition="掌握評選規則後，接下來我們進入技術核心：從蘭潭校區的實際空間配置與孤島供電路徑看起。">
+          <header class="slide-header">
+            <div class="slide-meta-row">
+              <span class="slide-kicker"><span class="dot"></span>04 · 評選配分與同分決勝槓桿</span>
+              <span class="archetype-pill">版型 1：一對一論法</span>
+            </div>
+            <h2 class="action-title">價格不評分，勝負鎖定<span class="hl-blue">「專案管理、監造及測試驗證（25 分）」</span>同分決勝項</h2>
+          </header>
+
+          <div class="slide-body">
+            <div class="grid-60-40">
+              <!-- Horizontal Bar Chart SVG -->
+              <div class="svg-box" style="flex-direction:column;align-items:stretch;padding:16px;">
+                <div style="font-size:13px;font-weight:800;color:#051C2C;margin-bottom:8px;">評選項目權重分佈（總分 100 分，平均 ≧75 分及格｜亮藍為同分決勝項）</div>
+                <svg viewBox="0 0 680 340" xmlns="http://www.w3.org/2000/svg">
+                  <!-- Row 1: 25 -->
+                  <text x="235" y="42" text-anchor="end" font-size="13" font-weight="800" fill="#051C2C">專案管理、監造及測試驗證</text>
+                  <rect x="248" y="20" width="350" height="34" rx="4" fill="#00A9F4"/>
+                  <text x="610" y="43" font-size="16" font-weight="900" fill="#0284C7">25 分</text>
+                  <text x="260" y="42" font-size="11.5" font-weight="700" fill="#051C2C">★ 最高權重・序位同分時直接決勝負</text>
+
+                  <!-- Row 2: 20 -->
+                  <text x="235" y="96" text-anchor="end" font-size="13" font-weight="700" fill="#1E293B">規劃構想及統包需求書能力</text>
+                  <rect x="248" y="74" width="280" height="32" rx="4" fill="#1E3A8A"/>
+                  <text x="540" y="96" font-size="15" font-weight="800" fill="#1E3A8A">20 分</text>
+                  <text x="260" y="95" font-size="11" fill="#E0F2FE">48h 低負載修正初算・30 天交貨藍圖</text>
+
+                  <!-- Row 3: 20 -->
+                  <text x="235" y="150" text-anchor="end" font-size="13" font-weight="700" fill="#1E293B">專案組織及人力配置</text>
+                  <rect x="248" y="128" width="280" height="32" rx="4" fill="#1E3A8A"/>
+                  <text x="540" y="150" font-size="15" font-weight="800" fill="#1E3A8A">20 分</text>
+                  <text x="260" y="149" font-size="11" fill="#E0F2FE">執業電機技師主持・IEC 62443 資安・人月表</text>
+
+                  <!-- Row 4: 15 -->
+                  <text x="235" y="204" text-anchor="end" font-size="13" font-weight="600" fill="#334155">計畫需求之瞭解</text>
+                  <rect x="248" y="182" width="210" height="30" rx="4" fill="#64748B"/>
+                  <text x="470" y="203" font-size="14" font-weight="700" fill="#475569">15 分</text>
+                  <text x="260" y="202" font-size="10.5" fill="#F8FAFC">法規清單・直指 9 大技術缺口</text>
+
+                  <!-- Row 5: 10 -->
+                  <text x="235" y="256" text-anchor="end" font-size="13" font-weight="600" fill="#334155">廠商過去履約績效</text>
+                  <rect x="248" y="234" width="140" height="30" rx="4" fill="#94A3B8"/>
+                  <text x="400" y="255" font-size="14" font-weight="700" fill="#475569">10 分</text>
+                  <text x="260" y="254" font-size="10.5" fill="#0F172A">5 年內 PCM／儲能實績</text>
+
+                  <!-- Row 6: 10 -->
+                  <text x="235" y="308" text-anchor="end" font-size="13" font-weight="600" fill="#334155">簡報及答詢</text>
+                  <rect x="248" y="286" width="140" height="30" rx="4" fill="#94A3B8"/>
+                  <text x="400" y="307" font-size="14" font-weight="700" fill="#475569">10 分</text>
+                  <text x="260" y="306" font-size="10.5" fill="#0F172A">主持人親簡 12 分＋答詢 8 分</text>
+
+                  <!-- Top 3 bracket -->
+                  <path d="M652,20 L664,20 L664,160 L652,160" fill="none" stroke="#051C2C" stroke-width="2"/>
+                  <text x="670" y="88" font-size="12" font-weight="900" fill="#051C2C" writing-mode="tb">前三項合占 65%</text>
+                </svg>
+              </div>
+
+              <!-- Right Box: Rules & Strategy -->
+              <div style="display:flex;flex-direction:column;gap:12px;">
+                <div class="card">
+                  <div class="card-title"><span>評選與投標硬規則</span><span class="tag tag-navy">13-評選須知</span></div>
+                  <table class="mc-table">
+                    <tbody>
+                      <tr><td style="width:110px;font-weight:700;">報價策略</td><td><strong>價格不評分</strong>；低於預算以標價決標 ➔ <strong>建議全額 647 萬投標</strong>。</td></tr>
+                      <tr><td style="font-weight:700;">評選委員會</td><td>共 <strong>7 人</strong>，名單已於政府電子採購網公開（須提前研究專長）。</td></tr>
+                      <tr><td style="font-weight:700;">服務建議書</td><td>紙本 <strong>10 份</strong>、正文 <strong>≦80 頁</strong>、附評選項目頁次對照表、<strong>嚴禁載明價格</strong>。</td></tr>
+                      <tr><td style="font-weight:700;">簡報與答詢</td><td>簡報 <strong>12 分鐘</strong>＋統問統答 <strong>8 分鐘</strong>，強制由<strong>計畫主持人親自簡報</strong>。</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="callout">
+                  <strong>核心致勝論述（Core Message）：</strong><br>
+                  「我們已經看出計畫書裡的技術與時程缺口（柴油低負載、515.1 kW 邊際、第 3 變電站黑箱），得標後 30 天即可交付可發包的統包需求書，並以自有 Class A 儀器獨立為學校把關。」
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <footer class="slide-footer">
+            <span>Source：13-評選須知、盡職調查報告「一、專案摘要」與「六、搶標重點追蹤」</span>
+            <span>05 / 16</span>
+          </footer>
+        </section>
+
+        <!-- ==================== SLIDE 6: CAMPUS SPATIAL MAP (REDRAWN SVG) ==================== -->
+        <section class="slide"
+          data-section="場域空間配置"
+          data-archetype="原創重繪 SVG（圖一＆圖四）"
+          data-title="蘭潭校區以總變電站為核心，串聯 10 座變電站與 800 kWp 光電守護三館 4,691 人"
+          data-pace="建議講解：40 秒"
+          data-conclusion="蘭潭校區微電網跨越兩個台電電號、串聯 10 座變電站，核心任務是於台電停電時以電號一總變電站為中心，守護三館 4,691 人連續 48 小時。"
+          data-detail="這張重繪自附件 18 圖一與圖四的空間配置圖清楚標示了關鍵地理關係：西北角台電責任分界點至總變電站 250 公尺、總變電站至第 3 變電站 450 公尺，共 700 公尺高壓線路列為本期汰換；新設 800 kWp 光電分為電號一 600 kWp（行政中心 250、機械系 150、第三處候選 200）與電號二牛舍羊舍 200 kWp。"
+          data-transition="看懂地理空間分佈後，下一頁我們切換到電氣單線架構圖，並可即時切換三種運轉模式。">
+          <header class="slide-header">
+            <div class="slide-meta-row">
+              <span class="slide-kicker"><span class="dot"></span>05 · 蘭潭校區微電網場域空間與路徑配置（重繪自附件 18 圖一／圖四）</span>
+              <span class="archetype-pill">原創重繪 SVG</span>
+            </div>
+            <h2 class="action-title">以蘭潭總變電站為孤島中樞，串聯 10 座變電站與 800 kWp 光電守護三館 <span class="hl-blue">4,691 人</span></h2>
+          </header>
+
+          <div class="slide-body">
+            <div class="grid-65-35">
+              <!-- Redrawn Lantan Campus Spatial SVG -->
+              <div class="svg-box" style="padding:8px;background:#F1F5F9;">
+                <svg viewBox="0 0 760 475" xmlns="http://www.w3.org/2000/svg">
+                  <!-- Campus subtle terrain grid -->
+                  <rect x="0" y="0" width="760" height="475" rx="6" fill="#F8FAFC"/>
+                  <!-- Track / Sports field landmark -->
+                  <rect x="332" y="218" width="116" height="158" rx="58" fill="#E2E8F0" stroke="#CBD5E1" stroke-width="2" transform="rotate(24 390 297)"/>
+                  <text x="392" y="302" text-anchor="middle" font-size="11" fill="#94A3B8" font-weight="700">校區田徑場</text>
+
+                  <!-- Power Lines -->
+                  <!-- Red: 700m HV Replacement (PCC -> Sub1 -> Sub5) -->
+                  <polyline points="54,48 135,98 122,220 116,325 78,325" fill="none" stroke="#DC2626" stroke-width="4.5" stroke-linejoin="round"/>
+                  <!-- Orange: Islanding Feeders (Sub1 -> Admin, Jiahe; Sub5 -> Ruisui) -->
+                  <polyline points="145,104 202,86 292,135" fill="none" stroke="#F97316" stroke-width="5" stroke-linejoin="round"/>
+                  <polyline points="196,90 198,168 258,224" fill="none" stroke="#F97316" stroke-width="5" stroke-linejoin="round"/>
+                  <polyline points="82,332 152,332 152,272 198,290" fill="none" stroke="#F97316" stroke-width="5" stroke-linejoin="round"/>
+                  <!-- Blue: Meter 1 HV -->
+                  <polyline points="145,104 292,135 456,216 492,220" fill="none" stroke="#0284C7" stroke-width="2.8" stroke-linejoin="round"/>
+                  <polyline points="152,332 186,435 280,432" fill="none" stroke="#0284C7" stroke-width="2.8" stroke-linejoin="round"/>
+                  <!-- Pink dashed: Cross-meter resilience S6 -->
+                  <polyline points="492,220 538,215 628,266 618,348 564,415 415,436" fill="none" stroke="#DB2777" stroke-width="3" stroke-dasharray="6 4"/>
+                  <!-- Green: Meter 2 HV -->
+                  <polyline points="538,215 612,340 554,406 415,428" fill="none" stroke="#059669" stroke-width="2.8" stroke-linejoin="round"/>
+
+                  <!-- 1. PCC -->
+                  <circle cx="54" cy="48" r="10" fill="#051C2C" stroke="#DC2626" stroke-width="3"/>
+                  <rect x="74" y="18" width="166" height="40" rx="5" fill="#FFFFFF" stroke="#DC2626" stroke-width="1.5"/>
+                  <text x="84" y="35" font-size="11.5" font-weight="800" fill="#B91C1C">台電責任分界點 PCC</text>
+                  <text x="84" y="50" font-size="10" fill="#475569">電號一 09-16-6190-00-0</text>
+
+                  <!-- 2. Sub 1: Main Substation (BESS + Diesel) -->
+                  <rect x="116" y="84" width="38" height="34" rx="5" fill="#F97316" stroke="#051C2C" stroke-width="2"/>
+                  <text x="135" y="106" text-anchor="middle" fill="#fff" font-size="12" font-weight="900">1</text>
+                  <rect x="14" y="114" width="152" height="58" rx="6" fill="#051C2C" stroke="#F97316" stroke-width="2"/>
+                  <text x="24" y="133" font-size="11.5" font-weight="800" fill="#38BDF8">蘭潭總變電站（核心）</text>
+                  <text x="24" y="149" font-size="10.5" fill="#fff">BESS 500kW / 1,000kWh</text>
+                  <text x="24" y="164" font-size="10.5" fill="#FDE68A">柴油 2×250kVA・儲油 2,000L</text>
+
+                  <!-- HV Replacement label -->
+                  <rect x="14" y="190" width="96" height="38" rx="4" fill="#FEF2F2" stroke="#DC2626"/>
+                  <text x="62" y="206" text-anchor="middle" font-size="10" font-weight="800" fill="#B91C1C">高壓線汰換</text>
+                  <text x="62" y="220" text-anchor="middle" font-size="9.5" fill="#991B1B">250m＋450m</text>
+
+                  <!-- 3. Admin Center (Sub 2 + PV 250) -->
+                  <polygon points="274,102 356,144 334,186 252,144" fill="#FEF3C7" stroke="#D97706" stroke-width="2.5"/>
+                  <rect x="282" y="106" width="22" height="20" rx="3" fill="#051C2C"/>
+                  <text x="293" y="120" text-anchor="middle" fill="#fff" font-size="11" font-weight="800">2</text>
+                  <rect x="276" y="18" width="182" height="52" rx="6" fill="#FFFFFF" stroke="#051C2C" stroke-width="1.8"/>
+                  <text x="286" y="36" font-size="12" font-weight="800" fill="#051C2C">★ 行政中心（一級負荷）</text>
+                  <text x="286" y="51" font-size="10.5" fill="#1E3A8A">災害應變指揮・日用 840 kWh</text>
+                  <text x="286" y="64" font-size="10.5" font-weight="700" fill="#B45309">新設光電 250 kWp</text>
+
+                  <!-- 4. Jiahe Hall (Sub 3) -->
+                  <polygon points="258,200 320,236 290,282 228,246" fill="#DBEAFE" stroke="#1E3A8A" stroke-width="2.5"/>
+                  <rect x="266" y="232" width="22" height="20" rx="3" fill="#051C2C"/>
+                  <text x="277" y="246" text-anchor="middle" fill="#fff" font-size="11" font-weight="800">3</text>
+                  <rect x="14" y="240" width="154" height="44" rx="5" fill="#EFF6FF" stroke="#1E3A8A" stroke-width="1.5"/>
+                  <text x="22" y="258" font-size="11.5" font-weight="800" fill="#1E3A8A">★ 嘉禾館（收容 2,131 人）</text>
+                  <text x="22" y="274" font-size="10" fill="#334155">新設 150kVA 柴油＋400L＋ATS</text>
+
+                  <!-- 5. Ruisui Hall (Sub 4) -->
+                  <polygon points="198,274 264,312 232,358 166,320" fill="#DBEAFE" stroke="#1E3A8A" stroke-width="2.5"/>
+                  <rect x="206" y="305" width="22" height="20" rx="3" fill="#051C2C"/>
+                  <text x="217" y="319" text-anchor="middle" fill="#fff" font-size="11" font-weight="800">4</text>
+                  <rect x="14" y="360" width="166" height="50" rx="5" fill="#EFF6FF" stroke="#1E3A8A" stroke-width="1.5"/>
+                  <text x="22" y="378" font-size="11.5" font-weight="800" fill="#1E3A8A">★ 瑞穗館（收容 2,560 人）</text>
+                  <text x="22" y="393" font-size="10" fill="#334155">既有 83 年 150kVA＋200L</text>
+                  <text x="22" y="405" font-size="10" font-weight="700" fill="#B91C1C">既有光電 158kWp（復歸過充風險）</text>
+
+                  <!-- 6. Sub 5 (3rd Substation) -->
+                  <rect x="64" y="314" width="24" height="24" rx="4" fill="#DC2626"/>
+                  <text x="76" y="330" text-anchor="middle" fill="#fff" font-size="12" font-weight="900">5</text>
+                  <text x="14" y="310" font-size="10.5" font-weight="800" fill="#B91C1C">第3變電站（CT/PT待查）</text>
+
+                  <!-- 7. ME Dept (Sub 6 + PV 150) -->
+                  <polygon points="274,404 338,404 328,452 260,446" fill="#FEF3C7" stroke="#D97706" stroke-width="2.2"/>
+                  <rect x="288" y="418" width="22" height="20" rx="3" fill="#051C2C"/>
+                  <text x="299" y="432" text-anchor="middle" fill="#fff" font-size="11" font-weight="800">6</text>
+                  <rect x="14" y="422" width="176" height="40" rx="5" fill="#FFFBEB" stroke="#D97706"/>
+                  <text x="22" y="439" font-size="11" font-weight="800" fill="#92400E">機械與能源學系館</text>
+                  <text x="22" y="454" font-size="10" fill="#78350F">屋頂光電 150 kWp（併入孤島）</text>
+
+                  <!-- 8. Candidate PV 3rd Site (Forest + Animal Sci + Ext Parking) -->
+                  <polygon points="390,136 446,164 426,198 370,170" fill="#FEF9C3" stroke="#D97706" stroke-width="2" stroke-dasharray="5 3"/>
+                  <text x="408" y="170" text-anchor="middle" font-size="10" font-weight="800" fill="#92400E">候② 森林館</text>
+                  <polygon points="444,186 498,214 480,242 426,214" fill="#FEF9C3" stroke="#D97706" stroke-width="2" stroke-dasharray="5 3"/>
+                  <text x="462" y="217" text-anchor="middle" font-size="10" font-weight="800" fill="#92400E">候① 動科館</text>
+                  <rect x="448" y="220" width="20" height="18" rx="3" fill="#051C2C"/>
+                  <text x="458" y="233" text-anchor="middle" fill="#fff" font-size="10" font-weight="800">7</text>
+
+                  <polygon points="498,236 550,262 536,288 484,262" fill="#FEF9C3" stroke="#D97706" stroke-width="2" stroke-dasharray="5 3"/>
+                  <text x="517" y="266" text-anchor="middle" font-size="9.5" font-weight="800" fill="#92400E">候③ 停車場棚架</text>
+
+                  <!-- Sub 8 & Cross-Meter Switch -->
+                  <rect x="512" y="200" width="20" height="18" rx="3" fill="#051C2C"/>
+                  <text x="522" y="213" text-anchor="middle" fill="#fff" font-size="10" font-weight="800">8</text>
+                  <circle cx="539" cy="215" r="8" fill="#DB2777" stroke="#fff" stroke-width="2"/>
+
+                  <rect x="492" y="18" width="254" height="72" rx="6" fill="#FFFFFF" stroke="#D97706" stroke-width="1.6"/>
+                  <text x="502" y="36" font-size="11.5" font-weight="800" fill="#92400E">電號一第三處光電 200 kWp（候選）</text>
+                  <text x="502" y="52" font-size="10.5" fill="#334155">①動科館 ②森林館 ③推廣中心前棚架</text>
+                  <text x="502" y="67" font-size="10.5" fill="#475569">細部設計擇一或組合，併接回電號一孤島</text>
+                  <text x="502" y="82" font-size="10" font-weight="700" fill="#DB2777">● 跨電號聯絡開關：設於變電站 8 旁（待台電核定）</text>
+
+                  <!-- 9. Livestock Farm (Meter 2: Sub 9 + PV 200 + H2 10kW) -->
+                  <rect x="582" y="314" width="66" height="36" rx="4" fill="#FEF3C7" stroke="#059669" stroke-width="2"/>
+                  <rect x="606" y="338" width="20" height="18" rx="3" fill="#059669"/>
+                  <text x="616" y="351" text-anchor="middle" fill="#fff" font-size="10" font-weight="800">9</text>
+                  <rect x="500" y="358" width="246" height="58" rx="6" fill="#ECFDF5" stroke="#059669" stroke-width="1.6"/>
+                  <text x="510" y="376" font-size="11.5" font-weight="800" fill="#047857">畜牧場（電號二 09-16-6190-13-5）</text>
+                  <text x="510" y="392" font-size="10.5" fill="#065F46">牛舍羊舍光電 200 kWp（含氫能 20 kWp）</text>
+                  <text x="510" y="407" font-size="10" fill="#475569">10kW 氫能 CHP 另立財物標（僅監視）</text>
+
+                  <!-- 10. Wood Factory (Sub 10) -->
+                  <rect x="386" y="422" width="26" height="22" rx="3" fill="#059669"/>
+                  <text x="399" y="437" text-anchor="middle" fill="#fff" font-size="10.5" font-weight="800">10</text>
+                  <text x="418" y="454" font-size="10.5" font-weight="700" fill="#047857">木材利用工廠（電號二末端）</text>
+
+                  <!-- Legend Strip -->
+                  <rect x="524" y="102" width="222" height="86" rx="6" fill="#FFFFFF" stroke="#CBD5E1"/>
+                  <text x="534" y="119" font-size="10.5" font-weight="800" fill="#051C2C">圖例說明</text>
+                  <line x1="534" y1="133" x2="558" y2="133" stroke="#F97316" stroke-width="4"/><text x="564" y="137" font-size="10" fill="#334155">48h 孤島供電路徑</text>
+                  <line x1="534" y1="149" x2="558" y2="149" stroke="#DC2626" stroke-width="3.5"/><text x="564" y="153" font-size="10" fill="#334155">高壓線路汰換（700m）</text>
+                  <line x1="534" y1="165" x2="558" y2="165" stroke="#0284C7" stroke-width="3"/><text x="564" y="169" font-size="10" fill="#334155">電號一高壓線</text>
+                  <line x1="534" y1="180" x2="558" y2="180" stroke="#DB2777" stroke-width="3" stroke-dasharray="5 3"/><text x="564" y="184" font-size="10" fill="#334155">跨電號 S6 擴大維生路徑</text>
+                </svg>
+              </div>
+
+              <!-- Right Summary Panel -->
+              <div style="display:flex;flex-direction:column;gap:10px;">
+                <div class="card">
+                  <div class="card-title"><span>10 座變電站與孤島邊界</span><span class="tag tag-blue">雙電號架構</span></div>
+                  <table class="mc-table" style="font-size:11.5px;">
+                    <thead><tr><th>編號</th><th>站點名稱</th><th>電號／定位</th></tr></thead>
+                    <tbody>
+                      <tr><td><strong>1</strong></td><td>蘭潭總變電站</td><td>電號一・BESS/柴油中樞</td></tr>
+                      <tr><td><strong>2</strong></td><td>行政中心變電站</td><td>電號一・48h 一級指揮</td></tr>
+                      <tr><td><strong>3</strong></td><td>嘉禾館變電站</td><td>電號一・48h 收容 2,131人</td></tr>
+                      <tr><td><strong>4</strong></td><td>瑞穗館變電站</td><td>電號一・48h 收容 2,560人</td></tr>
+                      <tr><td><strong>5</strong></td><td>蘭潭第 3 變電站</td><td>電號一・<strong style="color:#B91C1C;">CT/PT 異常待查</strong></td></tr>
+                      <tr><td><strong>6</strong></td><td>機械能源系館</td><td>電號一・150 kWp 光電</td></tr>
+                      <tr><td><strong>7</strong></td><td>動科館變電站</td><td>電號一・併接區中繼</td></tr>
+                      <tr><td><strong>8~10</strong></td><td>推廣／畜牧／木材</td><td>電號二・S6 擴大維生</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="callout" style="font-size:11.5px;">
+                  <strong>現勘必看清單（陳鴻翔技正 05-2717131）：</strong><br>
+                  ① 總變電站南北空地退縮 ② 第 3 變電站 CT/PT 實測 ③ 瑞穗館 83 年 VOLVO 類比盤 ④ 推廣中心旁跨電號開關路徑。
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <footer class="slide-footer">
+            <span>Source：18-補助計畫申請書（公開版）圖一、圖四及附表 11-1；詳細 GPS 點位可於首頁互動衛星地圖檢視</span>
+            <span>06 / 16</span>
+          </footer>
+        </section>
+
+        <!-- ==================== SLIDE 7: SINGLE-LINE DIAGRAM (INTERACTIVE SVG) ==================== -->
+        <section class="slide"
+          data-section="電力單線架構"
+          data-archetype="原創重繪互動 SVG（圖二＆五＆六）"
+          data-title="AC Hybrid 雙電號架構：11.4 kV 主孤島由 BESS 構網黑啟動，跨電號開關恆開路待台電核准"
+          data-pace="建議講解：45 秒"
+          data-conclusion="本案採交流耦合混合式微電網（AC Hybrid），以蘭潭總變電站 11.4 kV 匯流排為核心，平時削峰填谷、停電時 BESS 黑啟動構網，必要時再人工閉合跨電號聯絡開關支援畜牧場。"
+          data-detail="簡報上可直接點擊右上角按鈕即時切換三種狀態：平時併網、48 小時孤島運轉與擴大維生 S6 模式。請特別留意兩點：第一，孤島接地變壓器與 NGR 是停電時建立接地參考的必要設備；第二，跨電號聯絡開關涉及兩個台電電號互聯，採雙鑰匙硬體互鎖、電氣互鎖與 EMS 軟體連鎖三道防護，台電是否核准是本案最大法規變數。"
+          data-transition="看完整體單線圖後，我們放大檢視總變電站 240 平方公尺空地的儲能、柴油機佈局與消防退縮要求。">
+          <header class="slide-header">
+            <div class="slide-meta-row">
+              <span class="slide-kicker"><span class="dot"></span>06 · AC HYBRID 系統單線與三態切換（重繪自圖二／五／六／六-1）</span>
+              <div class="mode-tabs">
+                <button class="mode-tab active" data-sld-mode="grid">① 平時併網</button>
+                <button class="mode-tab" data-sld-mode="island">② 48h 孤島運轉</button>
+                <button class="mode-tab" data-sld-mode="s6">③ 擴大維生 S6</button>
+              </div>
+            </div>
+            <h2 class="action-title">11.4 kV 主孤島由 BESS 構網黑啟動，<span class="hl-red">跨電號聯絡開關</span>採三層互鎖待台電審查</h2>
+          </header>
+
+          <div class="slide-body">
+            <div class="svg-box" style="padding:10px;">
+              <svg id="sldSvg" data-mode="grid" viewBox="0 0 1160 410" xmlns="http://www.w3.org/2000/svg">
+                <!-- Island boundary dashed box -->
+                <rect x="14" y="14" width="790" height="384" rx="10" fill="none" stroke="#F97316" stroke-width="2" stroke-dasharray="7 5"/>
+                <text x="698" y="33" font-size="11.5" font-weight="800" fill="#EA580C">孤島電氣邊界（光電 600 kWp）</text>
+
+                <!-- Utility Meter 1 & Meter 2 -->
+                <rect x="278" y="24" width="196" height="44" rx="6" fill="#051C2C"/>
+                <text x="376" y="43" text-anchor="middle" fill="#fff" font-size="12.5" font-weight="800">台灣電力公司 電號一</text>
+                <text x="376" y="59" text-anchor="middle" fill="#94A3B8" font-size="10.5">09-16-6190-00-0</text>
+
+                <rect x="920" y="24" width="210" height="44" rx="6" fill="#051C2C"/>
+                <text x="1025" y="43" text-anchor="middle" fill="#fff" font-size="12.5" font-weight="800">台灣電力公司 電號二</text>
+                <text x="1025" y="59" text-anchor="middle" fill="#94A3B8" font-size="10.5">09-16-6190-13-5</text>
+
+                <!-- PCC 1 Line & Breaker -->
+                <line x1="376" y1="68" x2="376" y2="148" stroke="#051C2C" stroke-width="3" class="only-grid"/>
+                <rect x="366" y="96" width="20" height="20" fill="#10B981" stroke="#051C2C" stroke-width="2" class="pcc-closed"/>
+                <g class="pcc-open">
+                  <rect x="366" y="96" width="20" height="20" fill="#FEF2F2" stroke="#DC2626" stroke-width="2.5"/>
+                  <line x1="364" y1="118" x2="388" y2="94" stroke="#DC2626" stroke-width="3"/>
+                </g>
+                <text x="394" y="106" font-size="11" font-weight="800" fill="#051C2C">PCC 責任分界點斷路器</text>
+                <text x="394" y="121" font-size="10" fill="#64748B">ANSI 25/27/59/81/32/50/51/86</text>
+
+                <!-- Protection Relay Box -->
+                <rect x="34" y="76" width="224" height="48" rx="6" fill="#F8FAFC" stroke="#94A3B8" stroke-width="1.5"/>
+                <text x="146" y="96" text-anchor="middle" font-size="11.5" font-weight="800" fill="#051C2C">保護電驛群（獨立硬體迴路）</text>
+                <text x="146" y="113" text-anchor="middle" font-size="10" fill="#475569">停電 ≦100ms 偵測・≦200ms 解聯無逆送</text>
+                <line x1="258" y1="106" x2="366" y2="106" stroke="#64748B" stroke-width="1.5" stroke-dasharray="4 3"/>
+
+                <!-- MAIN 11.4 kV BUS (Meter 1) -->
+                <line x1="36" y1="148" x2="778" y2="148" stroke="#051C2C" stroke-width="6"/>
+                <text x="42" y="140" font-size="12" font-weight="900" fill="#051C2C">蘭潭總變電站 11.4 kV 孤島匯流排（電號一）</text>
+
+                <!-- Drop lines from Main Bus -->
+                <line x1="108" y1="148" x2="108" y2="178" stroke="#051C2C" stroke-width="2.5"/>
+                <line x1="254" y1="148" x2="254" y2="178" stroke="#051C2C" stroke-width="2.5"/>
+                <line x1="392" y1="148" x2="392" y2="178" stroke="#051C2C" stroke-width="2.5"/>
+                <line x1="538" y1="148" x2="538" y2="178" stroke="#051C2C" stroke-width="2.5"/>
+                <line x1="694" y1="148" x2="694" y2="178" stroke="#051C2C" stroke-width="2.5"/>
+
+                <!-- BESS -->
+                <rect x="34" y="178" width="148" height="88" rx="7" fill="#E0F2FE" stroke="#0284C7" stroke-width="2" class="bess-hl"/>
+                <text x="108" y="198" text-anchor="middle" font-size="12" font-weight="800" fill="#0369A1">BESS 儲能系統</text>
+                <text x="108" y="215" text-anchor="middle" font-size="11" font-weight="700" fill="#0F172A">500 kW / 1,000 kWh</text>
+                <text x="108" y="231" text-anchor="middle" font-size="10" fill="#334155">構網型 PCS・黑啟動</text>
+                <text x="108" y="246" text-anchor="middle" font-size="10" fill="#334155">專變 630 kVA (0.48/11.4kV)</text>
+                <text x="108" y="260" text-anchor="middle" font-size="9.5" font-weight="700" fill="#B91C1C">SOC 災時 20–90%（700kWh）</text>
+
+                <!-- Main Diesel -->
+                <rect x="192" y="178" width="124" height="88" rx="7" fill="#DCFCE7" stroke="#059669" stroke-width="2"/>
+                <text x="254" y="198" text-anchor="middle" font-size="12" font-weight="800" fill="#047857">主孤島柴油機</text>
+                <text x="254" y="216" text-anchor="middle" font-size="11.5" font-weight="700" fill="#0F172A">250 kVA × 2 台</text>
+                <text x="254" y="233" text-anchor="middle" font-size="10" fill="#334155">同步併聯・約 400 kW</text>
+                <text x="254" y="248" text-anchor="middle" font-size="10" fill="#334155">儲油 2,000 L</text>
+                <text x="254" y="261" text-anchor="middle" font-size="9.5" fill="#047857">SOC≦30% 待命起動</text>
+
+                <!-- Grounding Transformer -->
+                <rect x="326" y="178" width="132" height="72" rx="7" fill="#F3E8FF" stroke="#7C3AED" stroke-width="1.8"/>
+                <text x="392" y="201" text-anchor="middle" font-size="11.5" font-weight="800" fill="#6D28D9">孤島用接地變壓器</text>
+                <text x="392" y="220" text-anchor="middle" font-size="10.5" fill="#4C1D95">NGR ＋ 投切開關</text>
+                <text x="392" y="237" text-anchor="middle" font-size="9.5" fill="#6B7280">孤島建立接地參考點</text>
+
+                <!-- ME PV -->
+                <rect x="468" y="178" width="140" height="72" rx="7" fill="#FEF3C7" stroke="#D97706" stroke-width="1.8"/>
+                <text x="538" y="199" text-anchor="middle" font-size="11.5" font-weight="800" fill="#92400E">機械與能源學系</text>
+                <text x="538" y="217" text-anchor="middle" font-size="11" font-weight="700" fill="#78350F">屋頂光電 150 kWp</text>
+                <text x="538" y="236" text-anchor="middle" font-size="9.5" fill="#92400E">建物負載卸除・光電併入</text>
+
+                <!-- Dongke / Meter 1 Interconnect Zone -->
+                <rect x="618" y="178" width="152" height="88" rx="7" fill="#FEF3C7" stroke="#D97706" stroke-width="2" class="s6-hl"/>
+                <text x="694" y="198" text-anchor="middle" font-size="11.5" font-weight="800" fill="#92400E">電號一併接區</text>
+                <text x="694" y="215" text-anchor="middle" font-size="10" fill="#475569">經動科館變電站引接</text>
+                <text x="694" y="232" text-anchor="middle" font-size="11" font-weight="700" fill="#B45309">第三處光電 200 kWp</text>
+                <text x="694" y="250" text-anchor="middle" font-size="9.5" fill="#78350F">設專用變壓器（推廣中心旁）</text>
+
+                <!-- Lower 3 Shelters Bus -->
+                <line x1="254" y1="266" x2="254" y2="294" stroke="#051C2C" stroke-width="2.5"/>
+                <line x1="90" y1="294" x2="620" y2="294" stroke="#051C2C" stroke-width="3.5"/>
+                <line x1="145" y1="294" x2="145" y2="308" stroke="#051C2C" stroke-width="2"/>
+                <line x1="365" y1="294" x2="365" y2="308" stroke="#051C2C" stroke-width="2"/>
+                <line x1="585" y1="294" x2="585" y2="308" stroke="#051C2C" stroke-width="2"/>
+
+                <!-- Shelter 1: Admin -->
+                <rect x="34" y="308" width="222" height="78" rx="6" fill="#FFFFFF" stroke="#1E3A8A" stroke-width="2"/>
+                <text x="145" y="328" text-anchor="middle" font-size="12" font-weight="800" fill="#051C2C">★ 行政中心（第一級關鍵負載）</text>
+                <text x="145" y="346" text-anchor="middle" font-size="10" fill="#334155">應變指揮・資訊機房・無館舍發電機</text>
+                <text x="145" y="363" text-anchor="middle" font-size="10.5" font-weight="700" fill="#B45309">屋頂光電 250 kWp（內線防逆送）</text>
+                <text x="145" y="378" text-anchor="middle" font-size="9.5" fill="#1E3A8A">840.2 kWh/日 · 尖峰 257.0 kW</text>
+
+                <!-- Shelter 2: Jiahe -->
+                <rect x="266" y="308" width="206" height="78" rx="6" fill="#FFFFFF" stroke="#1E3A8A" stroke-width="2"/>
+                <text x="369" y="328" text-anchor="middle" font-size="12" font-weight="800" fill="#051C2C">★ 嘉禾館（收容 2,131 人）</text>
+                <text x="369" y="346" text-anchor="middle" font-size="10" fill="#334155">照明・通風・給排水・712.9 kWh/日</text>
+                <text x="369" y="363" text-anchor="middle" font-size="10" font-weight="700" fill="#047857">新設柴油 150kVA＋400L＋ATS</text>
+                <text x="369" y="378" text-anchor="middle" font-size="9.5" fill="#64748B">第二層獨立備援（不計入 48h 平衡）</text>
+
+                <!-- Shelter 3: Ruisui -->
+                <rect x="482" y="308" width="246" height="78" rx="6" fill="#FFFFFF" stroke="#1E3A8A" stroke-width="2"/>
+                <text x="605" y="328" text-anchor="middle" font-size="12" font-weight="800" fill="#051C2C">★ 瑞穗館（收容 2,560 人）</text>
+                <text x="605" y="346" text-anchor="middle" font-size="10" fill="#334155">846.9 kWh/日・既有 150kVA（僅監視）</text>
+                <text x="605" y="363" text-anchor="middle" font-size="10" font-weight="700" fill="#B91C1C">既有光電 158 kWp（須遠端切離防過充）</text>
+                <text x="605" y="378" text-anchor="middle" font-size="9.5" fill="#64748B">經第 3 變電站轉供</text>
+
+                <!-- CROSS-METER TIE SWITCH -->
+                <line x1="770" y1="222" x2="884" y2="222" stroke="#DB2777" stroke-width="3" stroke-dasharray="5 3" class="s6-hl"/>
+                <g class="tie-open">
+                  <rect x="815" y="211" width="22" height="22" fill="#FEF2F2" stroke="#DC2626" stroke-width="2.5"/>
+                  <line x1="813" y1="235" x2="839" y2="209" stroke="#DC2626" stroke-width="3"/>
+                </g>
+                <g class="tie-closed">
+                  <rect x="815" y="211" width="22" height="22" fill="#D97706" stroke="#051C2C" stroke-width="2.5"/>
+                  <line x1="815" y1="222" x2="837" y2="222" stroke="#fff" stroke-width="3"/>
+                </g>
+                <text x="826" y="188" text-anchor="middle" font-size="11" font-weight="800" fill="#B91C1C">跨電號聯絡開關</text>
+                <text x="826" y="203" text-anchor="middle" font-size="9.5" fill="#DB2777">併網恆開・雙鑰匙互鎖</text>
+                <text x="826" y="250" text-anchor="middle" font-size="9.5" fill="#64748B">僅限現場人工閉合</text>
+
+                <!-- METER 2 SIDE -->
+                <g class="meter2-dim">
+                  <line x1="1025" y1="68" x2="1025" y2="262" stroke="#051C2C" stroke-width="3" class="only-grid"/>
+                  <rect x="1015" y="96" width="20" height="20" fill="#10B981" stroke="#051C2C" stroke-width="2" class="pcc-closed"/>
+                  <g class="pcc-open">
+                    <rect x="1015" y="96" width="20" height="20" fill="#FEF2F2" stroke="#DC2626" stroke-width="2.5"/>
+                    <line x1="1013" y1="118" x2="1037" y2="94" stroke="#DC2626" stroke-width="3"/>
+                  </g>
+                  <text x="1044" y="110" font-size="10.5" font-weight="700" fill="#475569">電號二 PCC</text>
+
+                  <rect x="884" y="192" width="120" height="54" rx="6" fill="#F1F5F9" stroke="#059669" stroke-width="2" class="s6-hl"/>
+                  <text x="944" y="216" text-anchor="middle" font-size="11.5" font-weight="800" fill="#047857">推廣中心變電站</text>
+                  <text x="944" y="233" text-anchor="middle" font-size="9.5" fill="#475569">維持電號二受電</text>
+                  <line x1="944" y1="246" x2="944" y2="262" stroke="#059669" stroke-width="2.5"/>
+
+                  <!-- Meter 2 Bus -->
+                  <line x1="868" y1="262" x2="1144" y2="262" stroke="#059669" stroke-width="5"/>
+                  <text x="1006" y="278" text-anchor="middle" font-size="10.5" font-weight="800" fill="#047857">畜牧場總變電站匯流排（電號二）</text>
+
+                  <!-- Livestock + Wood + PV 200 + H2 -->
+                  <rect x="868" y="288" width="132" height="50" rx="6" fill="#ECFDF5" stroke="#059669" stroke-width="1.8" class="s6-hl"/>
+                  <text x="934" y="309" text-anchor="middle" font-size="11.5" font-weight="800" fill="#047857">畜牧場（24h 維生）</text>
+                  <text x="934" y="326" text-anchor="middle" font-size="9.5" fill="#065F46">S6 擴大維生選用加供</text>
+
+                  <rect x="1010" y="288" width="134" height="50" rx="6" fill="#F8FAFC" stroke="#94A3B8" stroke-width="1.5"/>
+                  <text x="1077" y="309" text-anchor="middle" font-size="11" font-weight="700" fill="#475569">木材利用工廠</text>
+                  <text x="1077" y="326" text-anchor="middle" font-size="9.5" fill="#64748B">日間負載為主</text>
+
+                  <rect x="868" y="346" width="132" height="46" rx="6" fill="#FEF3C7" stroke="#D97706" stroke-width="1.6"/>
+                  <text x="934" y="366" text-anchor="middle" font-size="10.5" font-weight="800" fill="#92400E">牛舍羊舍 200 kWp</text>
+                  <text x="934" y="381" text-anchor="middle" font-size="9.5" fill="#78350F">零逆送（含氫能 20kWp）</text>
+
+                  <rect x="1010" y="346" width="134" height="46" rx="6" fill="#F3E8FF" stroke="#7C3AED" stroke-width="1.5" stroke-dasharray="4 3"/>
+                  <text x="1077" y="366" text-anchor="middle" font-size="10.5" font-weight="800" fill="#6D28D9">10 kW 氫能 CHP</text>
+                  <text x="1077" y="381" text-anchor="middle" font-size="9.5" fill="#6B7280">另立財物標・僅上傳監視</text>
+                </g>
+              </svg>
+            </div>
+            <div class="callout" id="sldModeCaption" style="font-size:12px;">
+              【平時併網模式】電號一與電號二各自受電（PCC 常閉）；跨電號聯絡開關恆開路；BESS 執行削峰填谷（≧347 kW）與光電平滑，年省超約附加費 ≧51.2 萬元。
+            </div>
+          </div>
+
+          <footer class="slide-footer">
+            <span>Source：18-補助計畫申請書 圖二、圖五、圖六、圖六-1；點擊上方三按鈕可切換運轉狀態檢視</span>
+            <span>07 / 16</span>
+          </footer>
+        </section>
+
+        <!-- ==================== SLIDE 8: BESS LAYOUT & FIRE SAFETY ==================== -->
+        <section class="slide"
+          data-section="設備佈局與消防"
+          data-archetype="原創重繪 SVG（附圖1＆圖四A）"
+          data-title="總變電站 240 m² 儲能柴油配置須嚴守消防退縮，且非陸牌 VPC／UL 9540A 供應鏈吃緊"
+          data-pace="建議講解：35 秒"
+          data-conclusion="總變電站南北兩塊合計約 240 平方公尺空地容納儲能與柴油機雖有空間餘裕，但受限於內政部消防署儲能安全指引退縮距離、2 小時防火牆及全系統禁陸牌認證，是統包交期與審查的核心瓶頸。"
+          data-detail="北側 95 平方公尺配置兩台 250 kVA 柴油發電機與 1,600 公升外掛油箱，南側 145 平方公尺配置四組儲能櫃、500 kW 雙向 PCS 與 630 kVA 專用變壓器。距離兩處消防栓分別約 26 公尺與 44 公尺，須設 2 小時防火牆與自動撒水系統並退縮 1.5 公尺以上。此外，BESS、PCS、BMS、EMS 與通訊設備一律不得陸牌且須具 VPC 與 UL 9540A。"
+          data-transition="了解硬體佈局後，下一頁揭示本報告最具含金量的技術洞察：48 小時能量平衡中的柴油機低負載盲點。">
+          <header class="slide-header">
+            <div class="slide-meta-row">
+              <span class="slide-kicker"><span class="dot"></span>07 · 總變電站儲能＋柴油配置與消防退縮（重繪自附圖 1／圖四 A）</span>
+              <span class="archetype-pill">原創重繪 SVG</span>
+            </div>
+            <h2 class="action-title">總變電站 240 m² 空間餘裕充足，惟<span class="hl-amber">消防退縮審查與非陸牌 VPC／UL 9540A</span> 為交期關鍵</h2>
+          </header>
+
+          <div class="slide-body">
+            <div class="grid-60-40">
+              <!-- Redrawn BESS Site Plan SVG -->
+              <div class="svg-box" style="padding:10px;background:#F8FAFC;">
+                <svg viewBox="0 0 680 420" xmlns="http://www.w3.org/2000/svg">
+                  <!-- Fire rescue roads (blue dashed) -->
+                  <polyline points="20,390 190,340 425,40" fill="none" stroke="#38BDF8" stroke-width="5" stroke-dasharray="10 6"/>
+                  <polyline points="325,40 650,245" fill="none" stroke="#38BDF8" stroke-width="5" stroke-dasharray="10 6"/>
+                  <text x="530" y="138" font-size="11" font-weight="800" fill="#0284C7" transform="rotate(32 530 138)">校內消防救災動線（2 條）</text>
+
+                  <!-- Existing Main Substation Building -->
+                  <polygon points="318,70 508,186 410,336 220,220" fill="#CBD5E1" stroke="#475569" stroke-width="2.5"/>
+                  <text x="364" y="200" text-anchor="middle" font-size="17" font-weight="900" fill="#051C2C">蘭潭總變電站</text>
+                  <text x="364" y="222" text-anchor="middle" font-size="12" fill="#475569">（既有建築物）</text>
+
+                  <!-- North Lot: Diesel (95 m2) -->
+                  <polygon points="188,24 294,68 202,212 104,162" fill="#FFFBEB" stroke="#D97706" stroke-width="2.2"/>
+                  <!-- Setback red dashed line 1.5m -->
+                  <line x1="286" y1="68" x2="195" y2="206" stroke="#DC2626" stroke-width="3.5" stroke-dasharray="6 4"/>
+                  <!-- G2, G1, F, C -->
+                  <rect x="206" y="72" width="26" height="52" rx="3" fill="#DCFCE7" stroke="#059669" stroke-width="1.8" transform="rotate(32 219 98)"/>
+                  <text x="219" y="102" text-anchor="middle" font-size="11" font-weight="800" fill="#047857">G2</text>
+                  <rect x="166" y="130" width="26" height="52" rx="3" fill="#DCFCE7" stroke="#059669" stroke-width="1.8" transform="rotate(32 179 156)"/>
+                  <text x="179" y="160" text-anchor="middle" font-size="11" font-weight="800" fill="#047857">G1</text>
+                  <rect x="142" y="114" width="22" height="32" rx="3" fill="#FEF3C7" stroke="#D97706" stroke-width="1.5" transform="rotate(32 153 130)"/>
+                  <text x="153" y="134" text-anchor="middle" font-size="10.5" font-weight="800" fill="#92400E">F</text>
+                  <rect x="174" y="72" width="18" height="28" rx="2" fill="#E2E8F0" stroke="#475569" stroke-width="1.5" transform="rotate(32 183 86)"/>
+                  <text x="183" y="90" text-anchor="middle" font-size="10" font-weight="800" fill="#1E293B">C</text>
+
+                  <text x="22" y="54" font-size="13" font-weight="800" fill="#B45309">北側空地（約 95 m²）</text>
+                  <text x="22" y="72" font-size="10.5" fill="#475569">G1/G2：250kVA×2 柴油機</text>
+                  <text x="22" y="88" font-size="10.5" fill="#475569">F：外掛油箱 1,600 L｜C：控制盤</text>
+
+                  <!-- South Lot: BESS (145 m2) -->
+                  <polygon points="134,236 332,326 206,406 64,368" fill="#EFF6FF" stroke="#1E3A8A" stroke-width="2.2"/>
+                  <!-- 2hr Firewall red solid -->
+                  <line x1="134" y1="236" x2="332" y2="326" stroke="#DC2626" stroke-width="4"/>
+
+                  <!-- B1-B4, P, T, S -->
+                  <rect x="106" y="340" width="32" height="22" rx="2" fill="#0284C7" stroke="#051C2C" stroke-width="1.5" transform="rotate(20 122 351)"/>
+                  <text x="122" y="355" text-anchor="middle" font-size="10" font-weight="800" fill="#fff">B1</text>
+                  <rect x="115" y="316" width="32" height="22" rx="2" fill="#0284C7" stroke="#051C2C" stroke-width="1.5" transform="rotate(20 131 327)"/>
+                  <text x="131" y="331" text-anchor="middle" font-size="10" font-weight="800" fill="#fff">B2</text>
+                  <rect x="124" y="292" width="32" height="22" rx="2" fill="#0284C7" stroke="#051C2C" stroke-width="1.5" transform="rotate(20 140 303)"/>
+                  <text x="140" y="307" text-anchor="middle" font-size="10" font-weight="800" fill="#fff">B3</text>
+                  <rect x="133" y="268" width="32" height="22" rx="2" fill="#0284C7" stroke="#051C2C" stroke-width="1.5" transform="rotate(20 149 279)"/>
+                  <text x="149" y="283" text-anchor="middle" font-size="10" font-weight="800" fill="#fff">B4</text>
+
+                  <rect x="150" y="346" width="22" height="30" rx="2" fill="#1E3A8A" transform="rotate(20 161 361)"/>
+                  <text x="161" y="365" text-anchor="middle" font-size="10.5" font-weight="800" fill="#fff">P</text>
+                  <rect x="162" y="312" width="24" height="28" rx="2" fill="#7C3AED" transform="rotate(20 174 326)"/>
+                  <text x="174" y="330" text-anchor="middle" font-size="10.5" font-weight="800" fill="#fff">T</text>
+                  <rect x="176" y="276" width="18" height="28" rx="2" fill="#475569" transform="rotate(20 185 290)"/>
+                  <text x="185" y="294" text-anchor="middle" font-size="10.5" font-weight="800" fill="#fff">S</text>
+
+                  <text x="348" y="368" font-size="13" font-weight="800" fill="#1E3A8A">南側空地（約 145 m²）</text>
+                  <text x="348" y="386" font-size="10.5" fill="#334155">B1~B4：儲能櫃 1,000 kWh｜P：500kW PCS</text>
+                  <text x="348" y="402" font-size="10.5" fill="#334155">T：630 kVA 專變｜S：配電及控制盤</text>
+
+                  <!-- Hydrants 1 & 2 -->
+                  <circle cx="52" cy="396" r="11" fill="#DC2626" stroke="#fff" stroke-width="2"/>
+                  <text x="52" y="400" text-anchor="middle" fill="#fff" font-size="11" font-weight="900">1</text>
+                  <rect x="70" y="384" width="110" height="22" rx="4" fill="#FEF2F2" stroke="#DC2626"/>
+                  <text x="125" y="399" text-anchor="middle" font-size="10" font-weight="800" fill="#B91C1C">消防栓 1（約 26 m）</text>
+
+                  <circle cx="424" cy="48" r="11" fill="#DC2626" stroke="#fff" stroke-width="2"/>
+                  <text x="424" y="52" text-anchor="middle" fill="#fff" font-size="11" font-weight="900">2</text>
+                  <rect x="442" y="36" width="118" height="22" rx="4" fill="#FEF2F2" stroke="#DC2626"/>
+                  <text x="501" y="51" text-anchor="middle" font-size="10" font-weight="800" fill="#B91C1C">消防栓 2（約 44 m）</text>
+
+                  <!-- Setback Callout -->
+                  <rect x="14" y="198" width="166" height="26" rx="4" fill="#DC2626"/>
+                  <text x="97" y="215" text-anchor="middle" font-size="10.5" font-weight="800" fill="#fff">退縮線：設 2hr 防火牆 ≧1.5 m</text>
+
+                  <!-- North arrow -->
+                  <g transform="translate(636,365)">
+                    <line x1="0" y1="28" x2="0" y2="0" stroke="#051C2C" stroke-width="2"/>
+                    <polygon points="0,-6 -5,5 5,5" fill="#051C2C"/>
+                    <text x="0" y="42" text-anchor="middle" font-size="11" font-weight="800" fill="#051C2C">N</text>
+                  </g>
+                </svg>
+              </div>
+
+              <!-- Right Specs & Supply Chain Card -->
+              <div style="display:flex;flex-direction:column;gap:11px;">
+                <div class="card">
+                  <div class="card-title"><span>空間與消防法規檢核</span><span class="tag tag-red">內政部消防署指引</span></div>
+                  <ul class="bullet-list" style="font-size:12px;">
+                    <li><strong>空間餘裕</strong>：規劃範圍約 240 m²，設備本體占地約 28 m²、含 1.0 m 維護通道約 35 m²，餘裕約 200 m²。</li>
+                    <li><strong>法定退縮</strong>：距案場外建物／道路 30 m（設 2 hr 防火牆＋自動撒水得降為 <strong>3 m 以上</strong>）；距案場內總變電站 3 m（設 2 hr 防火牆得降為 <strong>1.5 m 以上</strong>）。</li>
+                    <li><strong>消防審查與說明會</strong>：細設實地丈量定位送消防機關審查，且施工前須辦全校師生說明會；儲油 2,000 L 須檢核公共危險物品法規。</li>
+                  </ul>
+                </div>
+
+                <div class="card card-navy">
+                  <div class="card-title"><span>非陸牌供應鏈硬門檻</span><span class="tag tag-amber">交期約 5 個月</span></div>
+                  <ul class="bullet-list" style="font-size:12px;color:#E2E8F0;">
+                    <li><strong>全面禁陸牌</strong>：BESS、PCS、BMS、EMS 及通訊設備皆嚴禁大陸品牌。</li>
+                    <li><strong>強制認證</strong>：構網型 PCS／儲能須具經濟部標檢局 <strong>VPC</strong> 認證及 <strong>UL 9540A</strong>（或同等）。</li>
+                    <li><strong>PCM 對策</strong>：規劃報告 30 天內須提出 ≧3 家合格非陸牌供應商交期與 VPC 效期清冊，作為統包「不低於」規格依據。</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <footer class="slide-footer">
+            <span>Source：19-補充表件 附圖 1、18-補助計畫申請書 圖四 A、盡職調查報告「二、設備及電力架構」與「五、B/C 風險」</span>
+            <span>08 / 16</span>
+          </footer>
+        </section>
+
+        <!-- ==================== SLIDE 9: 48H ENERGY BALANCE & DIESEL LOW-LOAD ==================== -->
+        <section class="slide"
+          data-section="能量平衡與盲點"
+          data-archetype="版型 6：對立論法"
+          data-title="技術盲點突破：48h 能量平衡帳面餘裕 48%，惟柴油機 25% 低負載率恐致油耗高估與濕堆積"
+          data-pace="建議講解：40 秒"
+          data-conclusion="計畫書算出的 48 小時能量平衡帳面餘裕高達 48%，但總監一眼看穿關鍵缺口：兩台 250 kVA 柴油機對平均 100 kW 負載只有 25% 負載率，3.2 kWh/L 的發電效率被明顯高估。"
+          data-detail="不計太陽光電下，三館 48 小時需求為 4,800 kWh；計畫書用 2,000 公升柴油乘以 3.2 kWh/L 得出 6,400 kWh，再加 BESS 700 kWh 共 7,100 kWh。然而 25% 低負載率不只拉低實際每公升發電量，還會引發柴油機濕堆積（wet stacking）故障。此外，三館同時尖峰達 515.1 kW 略超 PCS 500 kW 額定容量。把這兩個缺口與調度解法放進服務建議書，將是最具殺傷力的專業加分項。"
+          data-transition="解決了能量平衡的穩態問題，下一頁我們看更嚴苛的動態暫態門檻：停電轉態時序與 100 毫秒紅線。">
+          <header class="slide-header">
+            <div class="slide-meta-row">
+              <span class="slide-kicker"><span class="dot"></span>08 · 48 小時能量平衡驗算與總監技術洞見</span>
+              <span class="archetype-pill">版型 6：對立論法</span>
+            </div>
+            <h2 class="action-title">48h 能量帳面餘裕 48%，惟<span class="hl-red">柴油機 25% 低負載油耗高估與濕堆積</span>為最強建議書切入點</h2>
+          </header>
+
+          <div class="slide-body">
+            <div class="grid-2">
+              <!-- Left SVG: 48h Energy Balance Stacked Comparison -->
+              <div class="svg-box" style="flex-direction:column;align-items:stretch;padding:14px;">
+                <div style="font-size:12.5px;font-weight:800;color:#051C2C;margin-bottom:6px;">48 小時孤島能量供需對照（不計太陽光電｜單位：kWh）</div>
+                <svg viewBox="0 0 560 355" xmlns="http://www.w3.org/2000/svg">
+                  <line x1="62" y1="30" x2="62" y2="275" stroke="#CBD5E1" stroke-width="1.5"/>
+                  <line x1="62" y1="275" x2="536" y2="275" stroke="#051C2C" stroke-width="2"/>
+                  <!-- Reference 4800 line -->
+                  <line x1="62" y1="125" x2="536" y2="125" stroke="#DC2626" stroke-width="1.5" stroke-dasharray="5 4"/>
+                  <text x="534" y="119" text-anchor="end" font-size="10.5" font-weight="800" fill="#DC2626">48h 設計需求紅線：4,800 kWh</text>
+
+                  <text x="54" y="279" text-anchor="end" font-size="10.5" fill="#64748B">0</text>
+                  <text x="54" y="200" text-anchor="end" font-size="10.5" fill="#64748B">2,400</text>
+                  <text x="54" y="129" text-anchor="end" font-size="10.5" fill="#DC2626" font-weight="700">4,800</text>
+                  <text x="54" y="55" text-anchor="end" font-size="10.5" fill="#64748B">7,200</text>
+
+                  <!-- Scale: 7200 kWh = 225px (1 kWh = 0.03125 px) -->
+                  <!-- Bar 1: Demand 4,800 kWh = 150px -->
+                  <rect x="92" y="125" width="90" height="53" fill="#051C2C"/>
+                  <rect x="92" y="178" width="90" height="53" fill="#1E3A8A"/>
+                  <rect x="92" y="231" width="90" height="44" fill="#3B82F6"/>
+                  <text x="137" y="156" text-anchor="middle" fill="#fff" font-size="10" font-weight="700">行政 1,680</text>
+                  <text x="137" y="208" text-anchor="middle" fill="#fff" font-size="10" font-weight="700">瑞穗 1,694</text>
+                  <text x="137" y="257" text-anchor="middle" fill="#fff" font-size="10" font-weight="700">嘉禾 1,426</text>
+                  <text x="137" y="115" text-anchor="middle" font-size="14" font-weight="900" fill="#051C2C">4,800</text>
+                  <text x="137" y="294" text-anchor="middle" font-size="11.5" font-weight="800" fill="#051C2C">三館 48h 需求</text>
+                  <text x="137" y="310" text-anchor="middle" font-size="10" fill="#64748B">平均 100 kW</text>
+
+                  <!-- Bar 2: Conservative Plan 7,100 kWh = 222px -->
+                  <rect x="234" y="53" width="90" height="22" fill="#00A9F4"/>
+                  <rect x="234" y="75" width="90" height="200" fill="#059669"/>
+                  <text x="279" y="68" text-anchor="middle" fill="#051C2C" font-size="9.5" font-weight="800">BESS 700</text>
+                  <text x="279" y="178" text-anchor="middle" fill="#fff" font-size="11" font-weight="800">柴油 6,400</text>
+                  <text x="279" y="194" text-anchor="middle" fill="#D1FAE5" font-size="9.5">(2,000L×3.2)</text>
+                  <text x="279" y="44" text-anchor="middle" font-size="14" font-weight="900" fill="#059669">7,100 (+48%)</text>
+                  <text x="279" y="294" text-anchor="middle" font-size="11.5" font-weight="800" fill="#051C2C">計畫書保守情境</text>
+                  <text x="279" y="310" text-anchor="middle" font-size="10" fill="#64748B">SOC 20–90%</text>
+
+                  <!-- Bar 3: Unplanned Worst SOC 40% = 6,600 kWh = 206px -->
+                  <rect x="376" y="69" width="90" height="6" fill="#00A9F4"/>
+                  <rect x="376" y="75" width="90" height="200" fill="#D97706"/>
+                  <text x="421" y="60" text-anchor="middle" font-size="13.5" font-weight="900" fill="#B45309">6,600 (+38%)</text>
+                  <text x="421" y="168" text-anchor="middle" fill="#fff" font-size="11" font-weight="800">低負載實測風險</text>
+                  <text x="421" y="185" text-anchor="middle" fill="#FEF3C7" font-size="10">若實測降為 2.4 kWh/L</text>
+                  <text x="421" y="201" text-anchor="middle" fill="#FEF3C7" font-size="10">柴油僅剩 4,800 kWh</text>
+                  <text x="421" y="294" text-anchor="middle" font-size="11.5" font-weight="800" fill="#B45309">非預警最不利情境</text>
+                  <text x="421" y="310" text-anchor="middle" font-size="10" fill="#B45309">BESS 僅 200 kWh</text>
+
+                  <text x="62" y="342" font-size="10.5" fill="#475569">平時削峰目標：最大需量 3,991 → 3,644 kW（≧347 kW），年省超約附加費 ≧512,625 元</text>
+                </svg>
+              </div>
+
+              <!-- Right Opposition Panel: Plan Assumption vs. Engineering Reality -->
+              <div style="display:flex;flex-direction:column;gap:12px;">
+                <div class="card" style="border-top:4px solid #DC2626;flex:1;">
+                  <div class="card-title"><span>計畫書假設 vs. 實務工程缺口</span><span class="tag tag-red">建議書必寫亮點</span></div>
+                  <table class="mc-table" style="font-size:12px;">
+                    <thead>
+                      <tr><th style="width:92px;">檢核維度</th><th>計畫書假設（As-Is）</th><th>工程盲點與 PCM 對策（To-Be）</th></tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><strong>柴油機負載率與油耗</strong></td>
+                        <td>2×250 kVA 併聯發電，採高負載基準 <strong>3.2 kWh/L</strong>，2,000 L 可發 6,400 kWh。</td>
+                        <td>平均 100 kW 負載率僅 <strong>25%</strong>，實測油耗恐大幅偏低且引發<strong>濕堆積（Wet Stacking）</strong> ➔ 提出「單機高載運轉＋BESS 週期充放」調度策略並以低載曲線重算。</td>
+                      </tr>
+                      <tr>
+                        <td><strong>PCS 500 kW 邊際超載</strong></td>
+                        <td>PCS 額定 500 kW 承接三館孤島關鍵負載。</td>
+                        <td>三館同時最高負載達 <strong>515.1 kW</strong>（行政 257＋瑞穗 260＋嘉禾 78.4），非計畫停電不及預卸載 ➔ 規劃期定案可控負載清冊與分群卸載序。</td>
+                      </tr>
+                      <tr>
+                        <td><strong>既有光電復歸衝擊</strong></td>
+                        <td>瑞穗館既有 158 kWp（Grid-following）不計入 48h 平衡，穩定後自動復歸。</td>
+                        <td>孤島輕載時若突發滿發恐<strong>過充 BESS</strong> ➔ 要求加裝可遠端切離開關與對應 BESS 充電裕度之限發保護邏輯。</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="callout callout-amber" style="font-size:12px;">
+                  <strong>總監評語：</strong>在服務建議書「規劃構想（20 分）」直接附上修正低負載油耗後之 48h 逐時能量平衡初算，可瞬間與一般只會照抄需求書的投標團隊拉開差距。
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <footer class="slide-footer">
+            <span>Source：盡職調查報告「二、設備及電力架構」總監觀察、18-補助計畫申請書能量平衡分析</span>
+            <span>09 / 16</span>
+          </footer>
+        </section>
+
+        <!-- ==================== SLIDE 10: TRANSITION TIMING (REDRAWN SVG) ==================== -->
+        <section class="slide"
+          data-section="轉態時序標準"
+          data-archetype="原創重繪 SVG（附圖101＆102）"
+          data-title="雙軌停電轉態協同：全黑啟動 ≦5 分鐘達標，計畫型準無縫 ≦100 ms 列為不可放寬紅線"
+          data-pace="建議講解：35 秒"
+          data-conclusion="微電網轉態分為「非計畫停電全黑啟動」與「計畫型停電準無縫」兩條軌道，其中計畫型轉態 ≦100 毫秒是招標文件明訂『不得放寬』的硬紅線。"
+          data-detail="左圖重繪自附件 19 圖一：台電無預警停電時，電驛 100 毫秒內偵測、200 毫秒內 PCC 解聯無逆送、500 毫秒內 BESS 建立電壓頻率、2 秒內恢復行政中心第一級負載，全程 5 分鐘內完成，柴油機於 SOC 降至 30% 以下時 30 秒啟動、60 秒同步併聯。右圖重繪自圖二：計畫型停電前 EMS 先預卸除校區非關鍵負載，PCC 開路後 PCS 週波級切換為構網，確保三館獨立關鍵負載盤不跳脫不重開機，且須先通過動態模擬審核才准現場實測。"
+          data-transition="實現毫秒級轉態協同靠的是 MGCC 與 EMS 控制大腦，下一頁我們看 IEC 62443 資安分區與原始碼交付的潛藏地雷。">
+          <header class="slide-header">
+            <div class="slide-meta-row">
+              <span class="slide-kicker"><span class="dot"></span>09 · 停電轉態協同時序與反應時間紅線（重繪自附件 19 圖一／圖二）</span>
+              <span class="archetype-pill">原創重繪 SVG</span>
+            </div>
+            <h2 class="action-title">全黑啟動 ≦5 分鐘達標，計畫型準無縫 <span class="hl-red">≦100 ms（不得放寬）</span>須先模擬審核再實測</h2>
+          </header>
+
+          <div class="slide-body">
+            <div class="grid-2">
+              <!-- Track A: Unplanned Black Start SVG -->
+              <div class="svg-box" style="flex-direction:column;align-items:stretch;padding:12px;">
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+                  <span style="font-size:12.5px;font-weight:800;color:#051C2C;">情境 A｜非計畫停電轉態協同（全黑啟動）</span>
+                  <span class="tag tag-blue">全程 ≦5 分鐘</span>
+                </div>
+                <svg viewBox="0 0 560 390" xmlns="http://www.w3.org/2000/svg">
+                  <!-- Timeline vertical axis -->
+                  <line x1="92" y1="18" x2="92" y2="372" stroke="#CBD5E1" stroke-width="2"/>
+                  <!-- Step 1 -->
+                  <circle cx="92" cy="34" r="6" fill="#051C2C"/>
+                  <text x="80" y="38" text-anchor="end" font-size="11.5" font-weight="800" fill="#051C2C">≦100 ms</text>
+                  <rect x="110" y="14" width="430" height="40" rx="6" fill="#F1F5F9" stroke="#64748B" stroke-width="1.5"/>
+                  <text x="124" y="31" font-size="12" font-weight="800" fill="#051C2C">① 保護電驛偵測停電（ANSI 27/59/81U·O）</text>
+                  <text x="124" y="46" font-size="10.5" fill="#475569">獨立硬體迴路直接觸發，不經網路通訊</text>
+
+                  <!-- Step 2 -->
+                  <circle cx="92" cy="88" r="6" fill="#1E3A8A"/>
+                  <text x="80" y="92" text-anchor="end" font-size="11.5" font-weight="800" fill="#1E3A8A">≦200 ms</text>
+                  <rect x="110" y="68" width="430" height="40" rx="6" fill="#EFF6FF" stroke="#1E3A8A" stroke-width="1.5"/>
+                  <text x="124" y="85" font-size="12" font-weight="800" fill="#1E3A8A">② PCC 斷路器開斷解聯</text>
+                  <text x="124" y="100" font-size="10.5" fill="#334155">SOE 事件順序紀錄確認與台電完全隔離、無逆送</text>
+
+                  <!-- Step 3 -->
+                  <circle cx="92" cy="142" r="6" fill="#DC2626"/>
+                  <text x="80" y="146" text-anchor="end" font-size="11.5" font-weight="800" fill="#DC2626">≦500 ms</text>
+                  <rect x="110" y="122" width="430" height="40" rx="6" fill="#FEF2F2" stroke="#DC2626" stroke-width="2"/>
+                  <text x="124" y="139" font-size="12" font-weight="800" fill="#B91C1C">③ BESS 建立 V/F 基準（緩啟動防湧入電流）</text>
+                  <text x="124" y="154" font-size="10.5" fill="#7F1D1D">380 V ±5%、60 Hz ±0.5 Hz｜自動卸載 ≦500 ms</text>
+
+                  <!-- Step 4 -->
+                  <circle cx="92" cy="196" r="6" fill="#D97706"/>
+                  <text x="80" y="200" text-anchor="end" font-size="11.5" font-weight="800" fill="#B45309">≦2 秒</text>
+                  <rect x="110" y="176" width="430" height="40" rx="6" fill="#FFFBEB" stroke="#D97706" stroke-width="1.8"/>
+                  <text x="124" y="193" font-size="12" font-weight="800" fill="#92400E">④ 第一級關鍵負載恢復（行政中心）</text>
+                  <text x="124" y="208" font-size="10.5" fill="#78350F">災害應變指揮、資訊機房、通訊優先送電</text>
+
+                  <!-- Step 5 -->
+                  <circle cx="92" cy="252" r="6" fill="#0284C7"/>
+                  <text x="80" y="256" text-anchor="end" font-size="11.5" font-weight="800" fill="#0284C7">≦5 分鐘</text>
+                  <rect x="110" y="230" width="430" height="44" rx="6" fill="#E0F2FE" stroke="#0284C7" stroke-width="1.5"/>
+                  <text x="124" y="248" font-size="12" font-weight="800" fill="#0369A1">⑤ 第二級投入（館舍 ATS ≦10s）＋光電自動併入</text>
+                  <text x="124" y="264" font-size="10.5" fill="#0C4A6E">黑啟動全程 ≦5 分鐘驗收里程碑；光電依復歸延時併入</text>
+
+                  <!-- Step 6 -->
+                  <circle cx="92" cy="316" r="6" fill="#059669"/>
+                  <text x="80" y="313" text-anchor="end" font-size="10.5" font-weight="800" fill="#047857">SOC≦30%</text>
+                  <text x="80" y="328" text-anchor="end" font-size="10" fill="#047857">≦30s / 60s</text>
+                  <rect x="110" y="290" width="430" height="50" rx="6" fill="#ECFDF5" stroke="#059669" stroke-width="1.8"/>
+                  <text x="124" y="310" font-size="12" font-weight="800" fill="#047857">⑥ MGCC 下達柴油機啟動 ➔ 同步併聯承擔基載</text>
+                  <text x="124" y="328" font-size="10.5" fill="#065F46">≦30 秒達額定轉速電壓、≦60 秒同期檢核併聯無衝擊電流</text>
+
+                  <text x="110" y="366" font-size="10.5" font-weight="700" fill="#64748B">★ 風險控管：多台變壓器緩啟動湧入電流易致保護誤跳脫，須於規劃期定案逐台投入順序。</text>
+                </svg>
+              </div>
+
+              <!-- Track B: Planned Quasi-Seamless SVG -->
+              <div class="svg-box" style="flex-direction:column;align-items:stretch;padding:12px;">
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+                  <span style="font-size:12.5px;font-weight:800;color:#B91C1C;">情境 B｜計畫型停電轉態協同（準無縫切換）</span>
+                  <span class="tag tag-red">≦100 ms 不得放寬</span>
+                </div>
+                <svg viewBox="0 0 560 390" xmlns="http://www.w3.org/2000/svg">
+                  <line x1="92" y1="18" x2="92" y2="335" stroke="#FECACA" stroke-width="2"/>
+                  <!-- Step 1 -->
+                  <circle cx="92" cy="38" r="6" fill="#051C2C"/>
+                  <text x="80" y="42" text-anchor="end" font-size="11" font-weight="800" fill="#051C2C">轉態前</text>
+                  <rect x="110" y="16" width="430" height="44" rx="6" fill="#EFF6FF" stroke="#1E3A8A" stroke-width="1.5"/>
+                  <text x="124" y="34" font-size="12" font-weight="800" fill="#1E3A8A">① EMS 預先卸載非關鍵負載</text>
+                  <text x="124" y="50" font-size="10.5" fill="#334155">全校尖峰 3,991 kW 遠大於 PCS 500 kW，僅保留三館獨立關鍵盤</text>
+
+                  <!-- Step 2 -->
+                  <circle cx="92" cy="100" r="6" fill="#1E3A8A"/>
+                  <text x="80" y="104" text-anchor="end" font-size="11" font-weight="800" fill="#1E3A8A">t₀ 解聯</text>
+                  <rect x="110" y="78" width="430" height="42" rx="6" fill="#F1F5F9" stroke="#475569" stroke-width="1.5"/>
+                  <text x="124" y="96" font-size="12" font-weight="800" fill="#051C2C">② PCC 計畫性開路（確認無逆送）</text>
+                  <text x="124" y="112" font-size="10.5" fill="#475569">電驛配合 MGCC 指令平滑切離台電電網</text>
+
+                  <!-- Step 3: REDLINE <=100ms -->
+                  <circle cx="92" cy="168" r="8" fill="#DC2626"/>
+                  <text x="80" y="166" text-anchor="end" font-size="12" font-weight="900" fill="#DC2626">≦100 ms</text>
+                  <text x="80" y="180" text-anchor="end" font-size="9.5" font-weight="700" fill="#B91C1C">週波級紅線</text>
+                  <rect x="110" y="138" width="430" height="62" rx="6" fill="#FEF2F2" stroke="#DC2626" stroke-width="2.5"/>
+                  <text x="124" y="159" font-size="12.5" font-weight="900" fill="#B91C1C">③ PCS 由 GFL 切換為 GFM 構網 ➔ BESS 承接負載</text>
+                  <text x="124" y="177" font-size="10.5" font-weight="700" fill="#7F1D1D">硬性判定：關鍵負載不跳脫、資訊設備不重開機（不得放寬）</text>
+                  <text x="124" y="193" font-size="10" fill="#991B1B">SAT 以 Class A 週波級暫態錄波波形驗證；須先通過動態模擬審核</text>
+
+                  <!-- Step 4 -->
+                  <circle cx="92" cy="236" r="6" fill="#D97706"/>
+                  <text x="80" y="240" text-anchor="end" font-size="11" font-weight="700" fill="#B45309">孤島接續</text>
+                  <rect x="110" y="216" width="430" height="40" rx="6" fill="#FFFBEB" stroke="#D97706" stroke-width="1.5"/>
+                  <text x="124" y="233" font-size="12" font-weight="800" fill="#92400E">④ 光電復歸併入（≦5 分鐘）＋ 柴油機待命接續</text>
+                  <text x="124" y="248" font-size="10.5" fill="#78350F">電源優先序：BESS 構網 ➔ 光電併入 ➔ SOC≦30% 柴油機啟動</text>
+
+                  <!-- Step 5 -->
+                  <circle cx="92" cy="298" r="6" fill="#059669"/>
+                  <text x="80" y="296" text-anchor="end" font-size="10.5" font-weight="800" fill="#047857">復電穩定</text>
+                  <text x="80" y="310" text-anchor="end" font-size="10" fill="#047857">≧5 分鐘</text>
+                  <rect x="110" y="274" width="430" height="44" rx="6" fill="#ECFDF5" stroke="#059669" stroke-width="1.8"/>
+                  <text x="124" y="293" font-size="12" font-weight="800" fill="#047857">⑤ 孤島轉併網：台電穩定 5 分鐘後同期再併網</text>
+                  <text x="124" y="309" font-size="10.5" fill="#065F46">自動同期檢核閉合 PCC，無突波、不中斷校區供電</text>
+
+                  <!-- PCM Check Callout -->
+                  <rect x="14" y="336" width="526" height="44" rx="6" fill="#051C2C"/>
+                  <text x="26" y="355" font-size="11" font-weight="800" fill="#38BDF8">PCM 統包需求書把關重點：</text>
+                  <text x="26" y="371" font-size="10.5" fill="#E2E8F0">明確定義量測點位、電壓暫降深度與持續週波判定門檻（含變壓器激磁與既有 UPS 耐受度）。</text>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <footer class="slide-footer">
+            <span>Source：19-補充表件 圖一、圖二、附表 5；18-補助計畫申請書 表五-2；盡職調查報告「三、B 統包轉態反應時間」</span>
+            <span>10 / 16</span>
+          </footer>
+        </section>
+
+        <!-- ==================== SLIDE 11: EMS & CYBERSECURITY (REDRAWN SVG) ==================== -->
+        <section class="slide"
+          data-section="EMS 與資安架構"
+          data-archetype="原創重繪 SVG（圖三）"
+          data-title="EMS／MGCC 採 IEC 62443 四層縱深防禦，且「含核心平台完整原始碼交付」暗藏流標風險"
+          data-pace="建議講解：35 秒"
+          data-conclusion="系統資安依 IEC 62443-3-3 SL2 劃分四層分區，保護跳脫強制走獨立硬體迴路；但招標要求交付『含核心平台完整可編譯原始碼』，將淘汰多數國際品牌，須於規劃期透過市調化解流標風險。"
+          data-detail="如重繪的 Zone & Conduit 架構圖所示：Zone 3 為校務 IT 網路，遠端維護僅能走 VPN 加 MFA 核准通道；Zone 2 為 EMS 與歷史資料庫、NTP 主時鐘與離線備份；Zone 1 為秒級微電網控制器 MGCC；Zone 0 為現場設備層與獨立硬體保護迴路。驗收前必須完成數位分身沙盒驗證、Postman API 實測，以及第三方原始碼掃描、弱點掃描與滲透測試（中風險以上全數修補）。"
+          data-transition="談完資安與軟體交付把關，下一頁我們完整檢視 PCM 最核心的獨立驗收武器：48 小時三階段合併驗證與 14 項現場測試。">
+          <header class="slide-header">
+            <div class="slide-meta-row">
+              <span class="slide-kicker"><span class="dot"></span>10 · 通訊監控、IEC 62443 SL2 資安與原始碼交付（重繪自圖三）</span>
+              <span class="archetype-pill">原創重繪 SVG</span>
+            </div>
+            <h2 class="action-title">採 IEC 62443 四層分區與獨立硬體保護，惟<span class="hl-amber">「完整原始碼交付」</span>須先市調防流標</h2>
+          </header>
+
+          <div class="slide-body">
+            <div class="grid-65-35">
+              <!-- Redrawn Zone & Conduit SVG -->
+              <div class="svg-box" style="padding:10px;background:#F8FAFC;">
+                <svg viewBox="0 0 740 445" xmlns="http://www.w3.org/2000/svg">
+                  <!-- Zone 3: IT -->
+                  <rect x="12" y="10" width="716" height="74" rx="8" fill="#F1F5F9" stroke="#64748B" stroke-width="1.5" stroke-dasharray="5 3"/>
+                  <text x="24" y="30" font-size="11.5" font-weight="800" fill="#051C2C">Zone 3 · 校務資訊網路 (IT / Level 4)</text>
+                  <rect x="190" y="20" width="142" height="52" rx="5" fill="#fff" stroke="#94A3B8"/>
+                  <text x="261" y="42" text-anchor="middle" font-size="11" font-weight="700" fill="#0F172A">校務行政網路</text>
+                  <text x="261" y="58" text-anchor="middle" font-size="9.5" fill="#64748B">一般使用者</text>
+                  <rect x="344" y="20" width="166" height="52" rx="5" fill="#fff" stroke="#94A3B8"/>
+                  <text x="427" y="42" text-anchor="middle" font-size="11" font-weight="700" fill="#0F172A">能源展示看板／跨校分享</text>
+                  <text x="427" y="58" text-anchor="middle" font-size="9.5" fill="#64748B">僅去識別化資料</text>
+                  <rect x="522" y="20" width="192" height="52" rx="5" fill="#FFFBEB" stroke="#D97706" stroke-width="1.8"/>
+                  <text x="618" y="40" text-anchor="middle" font-size="11" font-weight="800" fill="#B45309">廠商遠端維護通道</text>
+                  <text x="618" y="56" text-anchor="middle" font-size="9.5" fill="#92400E">VPN＋MFA・申請核准・全程留存</text>
+
+                  <!-- Conduit 1 -->
+                  <rect x="12" y="92" width="716" height="24" rx="4" fill="#051C2C"/>
+                  <text x="370" y="108" text-anchor="middle" font-size="11" font-weight="800" fill="#38BDF8">防火牆 ／ 單向閘道（Conduit · IP 與通訊埠白名單管制）</text>
+
+                  <!-- Zone 2: OT Monitor & Data -->
+                  <rect x="12" y="124" width="716" height="82" rx="8" fill="#EFF6FF" stroke="#1E3A8A" stroke-width="1.6"/>
+                  <text x="24" y="144" font-size="11.5" font-weight="800" fill="#1E3A8A">Zone 2 · 監視與資料層 (OT / Level 3)</text>
+                  <rect x="24" y="152" width="218" height="44" rx="5" fill="#fff" stroke="#0284C7" stroke-width="1.6"/>
+                  <text x="133" y="170" text-anchor="middle" font-size="11" font-weight="800" fill="#0369A1">EMS 能源管理系統</text>
+                  <text x="133" y="186" text-anchor="middle" font-size="9.5" fill="#475569">排程・削峰・唯讀 API・數位分身沙盒</text>
+                  <rect x="252" y="152" width="150" height="44" rx="5" fill="#fff" stroke="#94A3B8"/>
+                  <text x="327" y="170" text-anchor="middle" font-size="11" font-weight="700" fill="#0F172A">歷史資料庫</text>
+                  <text x="327" y="186" text-anchor="middle" font-size="9.5" fill="#475569">SOE 事件順序・教學研究</text>
+                  <rect x="412" y="152" width="144" height="44" rx="5" fill="#fff" stroke="#94A3B8"/>
+                  <text x="484" y="170" text-anchor="middle" font-size="11" font-weight="700" fill="#0F172A">校內 NTP 主時鐘</text>
+                  <text x="484" y="186" text-anchor="middle" font-size="9.5" fill="#475569">時間同步確保 SOE 追溯</text>
+                  <rect x="566" y="152" width="148" height="44" rx="5" fill="#fff" stroke="#94A3B8"/>
+                  <text x="640" y="170" text-anchor="middle" font-size="11" font-weight="700" fill="#0F172A">離線備份</text>
+                  <text x="640" y="186" text-anchor="middle" font-size="9.5" fill="#475569">控制邏輯・定值・點位表</text>
+
+                  <!-- Conduit 2 -->
+                  <rect x="12" y="214" width="716" height="24" rx="4" fill="#1E3A8A"/>
+                  <text x="370" y="230" text-anchor="middle" font-size="11" font-weight="800" fill="#E0F2FE">防火牆 ／ 最小權限・白名單（Conduit · 控制層採有線實體網路）</text>
+
+                  <!-- Zone 1: Real-time Control -->
+                  <rect x="12" y="246" width="716" height="68" rx="8" fill="#ECFDF5" stroke="#059669" stroke-width="1.8"/>
+                  <text x="24" y="266" font-size="11.5" font-weight="800" fill="#047857">Zone 1 · 即時控制層 (OT / Level 2)</text>
+                  <rect x="180" y="256" width="534" height="48" rx="6" fill="#fff" stroke="#059669" stroke-width="2"/>
+                  <text x="447" y="276" text-anchor="middle" font-size="12.5" font-weight="800" fill="#047857">微電網控制器 MGCC（秒級以下即時控制）</text>
+                  <text x="447" y="294" text-anchor="middle" font-size="10" fill="#065F46">P-Q／V-Q／F-P 調度・黑啟動／轉態時序・EMS 策略驗證後執行・通訊中斷降級自主運轉</text>
+                  <text x="24" y="286" font-size="9.5" fill="#065F46">通訊中斷時各設備</text>
+                  <text x="24" y="300" font-size="9.5" fill="#065F46">依本地參數降級運轉</text>
+
+                  <!-- Zone 0: Field Equipment + Hardwired Loop -->
+                  <rect x="12" y="324" width="716" height="114" rx="8" fill="#FFFBEB" stroke="#D97706" stroke-width="1.8"/>
+                  <text x="24" y="343" font-size="11.5" font-weight="800" fill="#B45309">Zone 0 · 現場設備層 (OT / Level 0–1)</text>
+                  <!-- 6 device pills -->
+                  <rect x="24" y="350" width="108" height="36" rx="4" fill="#fff" stroke="#D97706"/><text x="78" y="366" text-anchor="middle" font-size="10" font-weight="800" fill="#0F172A">BESS／PCS</text><text x="78" y="379" text-anchor="middle" font-size="9" fill="#64748B">Modbus TCP</text>
+                  <rect x="140" y="350" width="108" height="36" rx="4" fill="#fff" stroke="#D97706"/><text x="194" y="366" text-anchor="middle" font-size="10" font-weight="800" fill="#0F172A">柴油機／ATS</text><text x="194" y="379" text-anchor="middle" font-size="9" fill="#64748B">乾接點／Modbus</text>
+                  <rect x="256" y="350" width="114" height="36" rx="4" fill="#fff" stroke="#D97706"/><text x="313" y="366" text-anchor="middle" font-size="10" font-weight="800" fill="#0F172A">數位保護電驛</text><text x="313" y="379" text-anchor="middle" font-size="9" fill="#64748B">IEC 61850</text>
+                  <rect x="378" y="350" width="108" height="36" rx="4" fill="#fff" stroke="#D97706"/><text x="432" y="366" text-anchor="middle" font-size="10" font-weight="800" fill="#0F172A">智慧電表</text><text x="432" y="379" text-anchor="middle" font-size="9" fill="#64748B">DNP3.0/Modbus</text>
+                  <rect x="494" y="350" width="106" height="36" rx="4" fill="#fff" stroke="#D97706"/><text x="547" y="366" text-anchor="middle" font-size="10" font-weight="800" fill="#0F172A">關鍵負載盤</text><text x="547" y="379" text-anchor="middle" font-size="9" fill="#64748B">自動卸載乾接點</text>
+                  <rect x="608" y="350" width="108" height="36" rx="4" fill="#fff" stroke="#D97706"/><text x="662" y="366" text-anchor="middle" font-size="10" font-weight="800" fill="#0F172A">環安／消防</text><text x="662" y="379" text-anchor="middle" font-size="9" fill="#64748B">E-stop／氫偵測</text>
+
+                  <!-- Independent Hardwired Loop -->
+                  <rect x="24" y="394" width="692" height="36" rx="5" fill="#FEF2F2" stroke="#DC2626" stroke-width="2"/>
+                  <text x="370" y="410" text-anchor="middle" font-size="11" font-weight="900" fill="#B91C1C">★ 獨立硬體保護迴路（完全不經網路通訊、不依賴 EMS／MGCC 可用性）</text>
+                  <text x="370" y="424" text-anchor="middle" font-size="9.5" fill="#7F1D1D">保護電驛跳脫・PCC／母聯連鎖・跨電號失效安全連鎖・BESS 熱失控 AC/DC 隔離・緊急停機 E-stop</text>
+                </svg>
+              </div>
+
+              <!-- Right EMS Governance Card -->
+              <div style="display:flex;flex-direction:column;gap:11px;">
+                <div class="card">
+                  <div class="card-title"><span>EMS 交付把關 5 大硬門檻</span><span class="tag tag-blue">IEC 62443 SL2</span></div>
+                  <ul class="bullet-list" style="font-size:12px;">
+                    <li><strong>完整原始碼交付</strong>：須交付含核心平台之可編譯完整原始碼與不限年授權，並通過完整性查驗。</li>
+                    <li><strong>第三方資安檢測</strong>：須由第三方機構出具原始碼掃描、弱點掃描及滲透測試報告，<strong>中風險以上全數修補</strong>。</li>
+                    <li><strong>API 與數位分身</strong>：以 <strong>Postman</strong> 實測標準 API 與現場量測數據一致；上線前先於數位分身沙盒驗證。</li>
+                    <li><strong>通訊協定</strong>：整合 Modbus、DNP3.0、IEC 61850；帳號個人化、稽核紀錄保存 1 年以上。</li>
+                    <li><strong>教育訓練</strong>：≧8 小時全程錄影留存。</li>
+                  </ul>
+                </div>
+
+                <div class="callout callout-crimson" style="font-size:12px;">
+                  <strong>統包流標預警：</strong><br>
+                  「含核心平台完整原始碼＋非陸牌」條件極嚴，國際大廠多半不接！PCM 規劃報告市調階段須確認<strong>至少 3 家台灣／非陸牌合格廠商</strong>願接單，避免統包發包流標拖垮 PCM 收款。
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <footer class="slide-footer">
+            <span>Source：18-補助計畫申請書 圖三、14-需求書、盡職調查報告「三、E 驗收門檻」與「五、B 風險」</span>
+            <span>11 / 16</span>
+          </footer>
+        </section>
+
+        <!-- ==================== SLIDE 12: ACCEPTANCE & 3-STAGE VERIFICATION ==================== -->
+        <section class="slide"
+          data-section="驗收與量測把關"
+          data-archetype="版型 4：連鎖論法"
+          data-title="PCM 最重責任在獨立把關驗收：自行量測三階段 48h 驗證、見證 14 項現場測試並技師簽署"
+          data-pace="建議講解：40 秒"
+          data-conclusion="本案驗收分兩層：除了嚴守 9 項文件交付期免受重罰，更核心的責任是以自有儀器獨立執行 48 小時三階段合併驗證並簽署，未達標絕不得建議學校驗收。"
+          data-detail="量測驗證費 150 萬規定嚴禁由統包代量。三階段驗證包括：階段一寒暑假受控孤島實測 4 至 8 小時、階段二以實測參數外推 48 小時逐時能量平衡（耗油模型偏差不得超過正負 10%）、階段三各柴油機四段假負載試運轉。另須見證 14 項現場測試，包含跨電號 7 情境、降級運轉 7 情境與 BESS 熱失控消防演練。"
+          data-transition="驗收標準如此嚴格，但實際剩下的計畫時間夠嗎？下一頁揭露本案最迫切的紅燈：時程已經落後 4 個月。">
+          <header class="slide-header">
+            <div class="slide-meta-row">
+              <span class="slide-kicker"><span class="dot"></span>11 · 三階段 48h 合併驗證、14 項 SAT 與交付罰則</span>
+              <span class="archetype-pill">版型 4：連鎖論法</span>
+            </div>
+            <h2 class="action-title">PCM 須<span class="hl-blue">自行量測（禁統包代量）</span>三階段 48h 驗證並見證 14 項 SAT，技師簽署把關</h2>
+          </header>
+
+          <div class="slide-body">
+            <!-- 3-Stage Chain Flow SVG -->
+            <div style="height:178px;" class="svg-box">
+              <svg viewBox="0 0 1160 156" xmlns="http://www.w3.org/2000/svg">
+                <!-- Stage 1 -->
+                <rect x="10" y="10" width="352" height="136" rx="8" fill="#EFF6FF" stroke="#1E3A8A" stroke-width="2"/>
+                <rect x="10" y="10" width="352" height="32" rx="8" fill="#1E3A8A"/>
+                <text x="24" y="31" font-size="12.5" font-weight="800" fill="#fff">階段一｜受控孤島實測（4～8 小時）</text>
+                <text x="24" y="62" font-size="11.5" fill="#0F172A">• 含黑啟動、負載投入、自動卸載實測</text>
+                <text x="24" y="82" font-size="11.5" fill="#0F172A">• 不足設計負載以負載箱每 15 分鐘追馴補足</text>
+                <text x="24" y="102" font-size="11.5" fill="#0F172A">• 排定於寒暑假或非上班日執行</text>
+                <text x="24" y="128" font-size="11" font-weight="800" fill="#1E3A8A">★ Class A 多點同步電品分析儀＋暫態錄波</text>
+
+                <!-- Arrow 1->2 -->
+                <polygon points="370,78 394,63 394,93" fill="#00A9F4" transform="rotate(180 382 78)"/>
+
+                <!-- Stage 2 -->
+                <rect x="404" y="10" width="352" height="136" rx="8" fill="#FFFBEB" stroke="#D97706" stroke-width="2"/>
+                <rect x="404" y="10" width="352" height="32" rx="8" fill="#D97706"/>
+                <text x="418" y="31" font-size="12.5" font-weight="800" fill="#fff">階段二｜48h 逐時能量外推（不計光電）</text>
+                <text x="418" y="62" font-size="11.5" fill="#0F172A">• 以階段一實測參數建構 48h 逐時模型</text>
+                <text x="418" y="82" font-size="11.5" fill="#0F172A">• 累計可供電量 ≧ 4,800 kWh 需求</text>
+                <text x="418" y="102" font-size="11.5" fill="#0F172A">• 儲能 SOC 全程不低於下限保護值（20%）</text>
+                <text x="418" y="128" font-size="11" font-weight="800" fill="#B45309">★ 模型耗油與實測偏差須 ≦ ±10%</text>
+
+                <!-- Arrow 2->3 -->
+                <polygon points="764,78 788,63 788,93" fill="#00A9F4" transform="rotate(180 776 78)"/>
+
+                <!-- Stage 3 -->
+                <rect x="798" y="10" width="352" height="136" rx="8" fill="#ECFDF5" stroke="#059669" stroke-width="2"/>
+                <rect x="798" y="10" width="352" height="32" rx="8" fill="#059669"/>
+                <text x="812" y="31" font-size="12.5" font-weight="800" fill="#fff">階段三｜柴油機四段假負載＆油耗實測</text>
+                <text x="812" y="62" font-size="11.5" fill="#0F172A">• 各柴油機執行 25／50／75／100% 假負載</text>
+                <text x="812" y="82" font-size="11.5" fill="#0F172A">• 實測發電效率不低於採購規範最低值</text>
+                <text x="812" y="102" font-size="11.5" fill="#0F172A">• 見證單機／並聯起動與「啟動失敗 1 次」</text>
+                <text x="812" y="128" font-size="11" font-weight="800" fill="#047857">★ 執業電機技師簽署報告（領 80% 量測費）</text>
+              </svg>
+            </div>
+
+            <div class="grid-2">
+              <!-- 14 SAT + Thresholds -->
+              <div class="card">
+                <div class="card-title"><span>14 項現場測試（附表 10）與性能門檻</span><span class="tag tag-navy">未達標不得驗收</span></div>
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:5px 12px;font-size:11.5px;color:#1E293B;line-height:1.45;">
+                  <div>1. 併離網轉態測試</div><div>8. 保護電驛動作（抽驗≧3 處）</div>
+                  <div>2. 復電自動同步併聯</div><div>9. 消防聯動（BESS 熱失控演練）</div>
+                  <div>3. 黑啟動（含變壓器湧入電流）</div><div>10. 削峰能力實測 ≧347 kW</div>
+                  <div>4. 自動卸載（≦500 ms）</div><div>11. 降級運轉 <strong>7 種情境</strong></div>
+                  <div>5. 48h 連續自主運轉</div><div>12. 多電源協同功率分攤</div>
+                  <div>6. 跨電號切換 <strong>7 種情境</strong></div><div>13. 計畫型準無縫轉態（≦100 ms）</div>
+                  <div>7. 防逆送保護實測</div><div>14. SOC 保留與災時優先序切換</div>
+                </div>
+                <div style="font-size:11px;color:#475569;border-top:1px solid #E2E8F0;padding-top:6px;">
+                  <strong>其他門檻：</strong>BESS 可用容量以 PCS 交流輸出端量測；光電 PR 值、IV 曲線抽測與熱影像檢測；M&amp;V 依 IPMVP 觀察期 ≧1 個月。
+                </div>
+              </div>
+
+              <!-- PCM Deliverable Deadlines & Penalties -->
+              <div class="card">
+                <div class="card-title"><span>PCM 交付期限與違約罰則（契約第 7、12 條）</span><span class="tag tag-red">退件累進重罰</span></div>
+                <table class="mc-table" style="font-size:11.5px;">
+                  <thead><tr><th>核心交付物</th><th>法定期限</th></tr></thead>
+                  <tbody>
+                    <tr><td>工作執行計畫書</td><td>決標次日起 <strong>14 日</strong></td></tr>
+                    <tr><td><strong>規劃報告（全案最緊節點）</strong></td><td>決標次日起 <strong style="color:#B91C1C;">30 日（跨春節）</strong></td></tr>
+                    <tr><td>統包需求書及招標文件草案</td><td>規劃報告核定後 <strong>10 日</strong>（修正 10 日）</td></tr>
+                    <tr><td>基本／細部設計＆測試計畫審查</td><td>收件 <strong>10／14 日</strong>、測試計畫 10 日</td></tr>
+                    <tr><td>三階段驗證／M&amp;V／成果報告</td><td>完成或觀察期屆滿後 <strong>30 日</strong></td></tr>
+                  </tbody>
+                </table>
+                <div class="callout callout-crimson" style="font-size:11.5px;padding:7px 10px;">
+                  <strong>罰則紅線：</strong>逾期違約金 <strong>2,000 元／日</strong>（上限 20%）；文件審查錯誤退回第 1／2／3 次起各罰 <strong>5,000／10,000／20,000 元</strong>！
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <footer class="slide-footer">
+            <span>Source：11-契約第 7、12 條；19-補充表件 附表 9、附表 10；盡職調查報告「三、驗收標準」</span>
+            <span>12 / 16</span>
+          </footer>
+        </section>
+
+        <!-- ==================== SLIDE 13: SCHEDULE GANTT (REDRAWN SVG) ==================== -->
+        <section class="slide"
+          data-section="時程落差分析"
+          data-archetype="原創重繪 SVG（8 階段甘特圖）"
+          data-title="時程已落後 4 個月、驗收恐超 117/1/31 期限：須以「決標 30 天預製＋長交期先行」搶回關鍵路徑"
+          data-pace="建議講解：40 秒"
+          data-conclusion="教育部補助計畫期程只到 117 年 1 月 31 日，但本 PCM 標已落後原計畫約 4 個月，照合理推估驗收與 M&V 觀察期將落到 117 年 2～3 月，直接超出補助期限。"
+          data-detail="這張重繪自盡調報告第 7 頁的雙軌甘特圖呈現 8 大階段落差：橘粉色為原計畫（附件 18 圖七），藍色為本報告推估（假設 116 年 1 月上旬決標、統包等標評選 2.5 個月、非陸牌 BESS/PCS 交期 5 個月、孤島實測排在 117 年寒假）。面對這 4 個月缺口，PCM 必須出四招壓縮關鍵路徑，並在規劃報告依需求書貳、一、(八)明文提出展延或提前驗收備案。"
+          data-transition="時程落後不只影響補助核銷，更直接放大固定總價合約的人力成本曝險；下一頁我們以 BCG 矩陣盤點全部 12 大風險。">
+          <header class="slide-header">
+            <div class="slide-meta-row">
+              <span class="slide-kicker"><span class="dot"></span>12 · 原計畫 vs. 推估時程雙軌對照（重繪自盡調報告第 7 頁）</span>
+              <span class="archetype-pill">原創重繪 SVG</span>
+            </div>
+            <h2 class="action-title">PCM 招標已落後 <span class="hl-red">4 個月</span>、驗收恐超 117/1/31 期限，須採四招壓縮關鍵路徑</h2>
+          </header>
+
+          <div class="slide-body">
+            <!-- Redrawn 8-Stage Dual-Track Gantt SVG -->
+            <div class="svg-box" style="flex-direction:column;align-items:stretch;padding:12px 16px;">
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+                <span style="font-size:12.5px;font-weight:800;color:#051C2C;">8 大階段雙軌甘特圖（民國年／月；推估假設 116 年 1 月上旬決標）</span>
+                <div style="display:flex;gap:16px;font-size:11.5px;font-weight:700;">
+                  <span style="color:#E07A5F;">■ 原計畫（附件 18 圖七）</span>
+                  <span style="color:#2563EB;">■ 本報告合理推估</span>
+                  <span style="color:#DC2626;">┆ 補助期程終止 117/1/31</span>
+                </div>
+              </div>
+              <svg viewBox="0 0 1120 278" xmlns="http://www.w3.org/2000/svg">
+                <!-- Vertical Month Gridlines: 115/9 (x=230) to 117/3 (x=1040) -> 18 months = 45px/month -->
+                <g stroke="#E2E8F0" stroke-width="1">
+                  <line x1="230" y1="24" x2="230" y2="255"/>
+                  <line x1="365" y1="24" x2="365" y2="255"/>
+                  <line x1="500" y1="24" x2="500" y2="255"/>
+                  <line x1="635" y1="24" x2="635" y2="255"/>
+                  <line x1="770" y1="24" x2="770" y2="255"/>
+                  <line x1="905" y1="24" x2="905" y2="255"/>
+                  <line x1="1040" y1="24" x2="1040" y2="255"/>
+                </g>
+                <!-- Month labels -->
+                <g font-size="11" font-weight="700" fill="#64748B" text-anchor="middle">
+                  <text x="230" y="16">115/9</text>
+                  <text x="365" y="16">115/12</text>
+                  <text x="500" y="16">116/3</text>
+                  <text x="635" y="16">116/6</text>
+                  <text x="770" y="16">116/9</text>
+                  <text x="905" y="16">116/12</text>
+                  <text x="1040" y="16">117/3</text>
+                </g>
+
+                <!-- Deadline Red Dashed Line: 117/1/31 = 116/12 + 2 months = 905 + 90 = 995 -->
+                <line x1="995" y1="20" x2="995" y2="262" stroke="#DC2626" stroke-width="2.5" stroke-dasharray="6 4"/>
+                <rect x="936" y="256" width="132" height="20" rx="4" fill="#DC2626"/>
+                <text x="1002" y="270" text-anchor="middle" font-size="10.5" font-weight="800" fill="#fff">補助終止 117/1/31</text>
+
+                <!-- Row labels + Dual bars -->
+                <!-- 1. PCM 招標至決標 -->
+                <text x="218" y="44" text-anchor="end" font-size="12" font-weight="700" fill="#0F172A">1. PCM 招標至決標</text>
+                <rect x="230" y="29" width="90" height="10" rx="5" fill="#F2B5A7"/>
+                <rect x="342" y="42" width="76" height="11" rx="5" fill="#2563EB"/>
+
+                <!-- 2. 規劃報告＋統包需求書 -->
+                <text x="218" y="74" text-anchor="end" font-size="12" font-weight="700" fill="#0F172A">2. 規劃報告＋統包需求書</text>
+                <rect x="422" y="64" width="95" height="11" rx="5" fill="#2563EB"/>
+                <text x="524" y="73" font-size="10" font-weight="700" fill="#B91C1C">← 30 日跨春節最緊</text>
+
+                <!-- 3. 統包招標至決標 -->
+                <text x="218" y="104" text-anchor="end" font-size="12" font-weight="700" fill="#0F172A">3. 統包招標至決標（2.5月）</text>
+                <rect x="320" y="89" width="180" height="10" rx="5" fill="#F2B5A7"/>
+                <rect x="520" y="102" width="115" height="11" rx="5" fill="#2563EB"/>
+                <text x="642" y="111" font-size="10" font-weight="700" fill="#1E3A8A">最快 116/5 底決標</text>
+
+                <!-- 4. 細部設計＋台電審查 -->
+                <text x="218" y="134" text-anchor="end" font-size="12" font-weight="700" fill="#0F172A">4. 細部設計＋台電審查</text>
+                <rect x="500" y="119" width="45" height="10" rx="5" fill="#F2B5A7"/>
+                <rect x="635" y="132" width="135" height="11" rx="5" fill="#2563EB"/>
+
+                <!-- 5. BESS/PCS 製造與 FAT -->
+                <text x="218" y="164" text-anchor="end" font-size="12" font-weight="700" fill="#0F172A">5. BESS／PCS 製造與 FAT</text>
+                <rect x="655" y="155" width="225" height="11" rx="5" fill="#2563EB"/>
+                <text x="888" y="164" font-size="10" font-weight="700" fill="#B45309">非陸牌交期約 5 個月</text>
+
+                <!-- 6. 施工建置 -->
+                <text x="218" y="194" text-anchor="end" font-size="12" font-weight="700" fill="#0F172A">6. 現場施工建置</text>
+                <rect x="545" y="179" width="360" height="10" rx="5" fill="#F2B5A7"/>
+                <rect x="745" y="192" width="205" height="11" rx="5" fill="#2563EB"/>
+
+                <!-- 7. 系統測試＋48h 驗證 -->
+                <text x="218" y="224" text-anchor="end" font-size="12" font-weight="700" fill="#0F172A">7. 系統測試＋48h 驗證</text>
+                <rect x="680" y="209" width="225" height="10" rx="5" fill="#F2B5A7"/>
+                <rect x="905" y="222" width="110" height="11" rx="5" fill="#2563EB"/>
+                <text x="1022" y="231" font-size="10" font-weight="700" fill="#DC2626">排 117 寒假</text>
+
+                <!-- 8. 驗收＋成效觀察期 -->
+                <text x="218" y="252" text-anchor="end" font-size="12" font-weight="700" fill="#DC2626">8. 驗收＋M&amp;V 觀察期</text>
+                <rect x="905" y="238" width="90" height="10" rx="5" fill="#F2B5A7"/>
+                <rect x="1018" y="246" width="76" height="12" rx="5" fill="#DC2626"/>
+                <text x="1018" y="242" font-size="10" font-weight="800" fill="#DC2626">超出期程（117/2–3）</text>
+              </svg>
+            </div>
+
+            <!-- 4 Compression Tactics -->
+            <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;">
+              <div class="card" style="border-top:3px solid #051C2C;padding:10px 12px;">
+                <div style="font-size:12px;font-weight:800;color:#051C2C;">手段 ① 投標前預製模板</div>
+                <p style="font-size:11.5px;color:#334155;line-height:1.45;">備標期即做好現況調查表單、48h 能量平衡模型與統包需求書範本，決標後 30 天只需填入實測數據。</p>
+              </div>
+              <div class="card" style="border-top:3px solid #1E3A8A;padding:10px 12px;">
+                <div style="font-size:12px;font-weight:800;color:#1E3A8A;">手段 ② 規劃期平行推台電</div>
+                <p style="font-size:11.5px;color:#334155;line-height:1.45;">規劃期同步辦理台電首次洽詢與會勘（鎖定跨電號聯絡開關），統包需求書與招標文件並行撰寫。</p>
+              </div>
+              <div class="card" style="border-top:3px solid #D97706;padding:10px 12px;">
+                <div style="font-size:12px;font-weight:800;color:#B45309;">手段 ③ 長交期先行＋分批核</div>
+                <p style="font-size:11.5px;color:#334155;line-height:1.45;">統包需求書內建「長交期設備先行送審」與「細部設計分批核定」，讓 BESS／PCS 決標後即刻下單。</p>
+              </div>
+              <div class="card" style="border-top:3px solid #DC2626;padding:10px 12px;">
+                <div style="font-size:12px;font-weight:800;color:#B91C1C;">手段 ④ 備妥展延法定備案</div>
+                <p style="font-size:11.5px;color:#334155;line-height:1.45;">依需求書貳、一、(八)明文要求，於規劃報告主動提報「提前驗收、縮短觀察期或報教育部展延」備案。</p>
+              </div>
+            </div>
+          </div>
+
+          <footer class="slide-footer">
+            <span>Source：盡職調查報告「四、時程規劃」與原 PDF 第 7 頁甘特圖；需求書貳、一、(八)</span>
+            <span>13 / 16</span>
+          </footer>
+        </section>
+
+        <!-- ==================== SLIDE 14: BCG 2x2 RISK MATRIX ==================== -->
+        <section class="slide"
+          data-section="風險矩陣"
+          data-archetype="版型 8：BCG 2×2 矩陣"
+          data-title="風險不在技術而在合約無封頂：商業、技術與法規 12 大風險全景定位與防禦對策"
+          data-pace="建議講解：40 秒"
+          data-conclusion="全案最大的風險不在技術，而在『固定費用、履約期無封頂、收款綁統包』的合約結構；統包每延宕一個月，本案就多燒一個月長駐人力。"
+          data-detail="這張 BCG 2×2 風險矩陣把盡調報告中的商業、技術與法規 12 大風險依衝擊度與發生機率精準定位。右上紅區四大致命風險分別為：R1 履約期無封頂（延半年多燒 70～90 萬）、R2 60% 收款綁統包進度、R3 懲罰性違約金高達學校向統包求償金額之 20%、以及 R4 跨電號聯絡開關台電核准變數。防禦核心是透過書面釋疑、專業責任險覆蓋審查過失與雙人技師簽核鎖死曝險。"
+          data-transition="盤點完風險後，接下來兩頁我們轉守為攻：如何把這些技術缺口轉化成評選 6 大維度的致勝打法與即刻行動清單。">
+          <header class="slide-header">
+            <div class="slide-meta-row">
+              <span class="slide-kicker"><span class="dot"></span>13 · 商業合約 ✕ 技術 ✕ 法規全景風險定位</span>
+              <span class="archetype-pill">版型 8：BCG 2×2 矩陣</span>
+            </div>
+            <h2 class="action-title">最大風險不在技術而在<span class="hl-red">「總價無封頂＋60% 收款綁統包」</span>，須藉釋疑與保險鎖死曝險</h2>
+          </header>
+
+          <div class="slide-body">
+            <div class="grid-60-40">
+              <!-- BCG 2x2 Scatter SVG -->
+              <div class="svg-box" style="padding:10px;background:#fff;">
+                <svg viewBox="0 0 680 420" xmlns="http://www.w3.org/2000/svg">
+                  <!-- Quadrants -->
+                  <rect x="64" y="24" width="298" height="176" fill="#FFFBEB" stroke="#CBD5E1"/>
+                  <rect x="362" y="24" width="302" height="176" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="1.5"/>
+                  <rect x="64" y="200" width="298" height="176" fill="#F8FAFC" stroke="#CBD5E1"/>
+                  <rect x="362" y="200" width="302" height="176" fill="#EFF6FF" stroke="#CBD5E1"/>
+
+                  <!-- Quadrant Labels -->
+                  <text x="76" y="44" font-size="11" font-weight="800" fill="#B45309">高衝擊 × 中低機率（轉嫁／預案）</text>
+                  <text x="652" y="44" text-anchor="end" font-size="11.5" font-weight="900" fill="#B91C1C">★ 高衝擊 × 高機率（首要封堵紅區）</text>
+                  <text x="76" y="366" font-size="11" font-weight="700" fill="#64748B">中低衝擊 × 中低機率（常規控管）</text>
+                  <text x="652" y="366" text-anchor="end" font-size="11" font-weight="800" fill="#1E3A8A">中衝擊 × 高機率（建議書加分題）</text>
+
+                  <!-- Axes -->
+                  <line x1="64" y1="376" x2="664" y2="376" stroke="#051C2C" stroke-width="2"/>
+                  <line x1="64" y1="24" x2="64" y2="376" stroke="#051C2C" stroke-width="2"/>
+                  <text x="364" y="404" text-anchor="middle" font-size="12" font-weight="800" fill="#051C2C">發生機率（低 ──────────────────────► 高）</text>
+                  <text x="24" y="200" text-anchor="middle" font-size="12" font-weight="800" fill="#051C2C" transform="rotate(-90 24 200)">財務／履約衝擊程度（低 ───► 高）</text>
+
+                  <!-- High-High Red Zone Dots -->
+                  <circle cx="585" cy="70" r="14" fill="#DC2626"/><text x="585" y="74" text-anchor="middle" fill="#fff" font-size="10.5" font-weight="800">R1</text>
+                  <text x="565" y="74" text-anchor="end" font-size="11" font-weight="800" fill="#7F1D1D">履約無封頂（+70~90萬）</text>
+
+                  <circle cx="545" cy="112" r="14" fill="#DC2626"/><text x="545" y="116" text-anchor="middle" fill="#fff" font-size="10.5" font-weight="800">R2</text>
+                  <text x="525" y="116" text-anchor="end" font-size="11" font-weight="800" fill="#7F1D1D">60% 收款綁統包進度</text>
+
+                  <circle cx="480" cy="154" r="13" fill="#B91C1C"/><text x="480" y="158" text-anchor="middle" fill="#fff" font-size="10.5" font-weight="800">R4</text>
+                  <text x="498" y="158" font-size="11" font-weight="800" fill="#7F1D1D">跨電號開關台電變數</text>
+
+                  <circle cx="412" cy="88" r="13" fill="#EA580C"/><text x="412" y="92" text-anchor="middle" fill="#fff" font-size="10.5" font-weight="800">R5</text>
+                  <text x="430" y="92" font-size="10.5" font-weight="700" fill="#9A3412">EMS 原始碼致流標</text>
+
+                  <!-- High-Low Amber Zone Dots -->
+                  <circle cx="235" cy="74" r="13" fill="#D97706"/><text x="235" y="78" text-anchor="middle" fill="#fff" font-size="10.5" font-weight="800">R3</text>
+                  <text x="254" y="78" font-size="10.5" font-weight="800" fill="#92400E">懲罰違約金（求償 20%）</text>
+
+                  <circle cx="155" cy="118" r="12" fill="#D97706"/><text x="155" y="122" text-anchor="middle" fill="#fff" font-size="10" font-weight="800">R6</text>
+                  <text x="172" y="122" font-size="10.5" font-weight="700" fill="#92400E">116 年度預算刪減風險</text>
+
+                  <circle cx="245" cy="162" r="12" fill="#D97706"/><text x="245" y="166" text-anchor="middle" fill="#fff" font-size="10" font-weight="800">R7</text>
+                  <text x="262" y="166" font-size="10.5" font-weight="700" fill="#92400E">≦100ms 準無縫未過</text>
+
+                  <!-- Med-High Blue Zone Dots -->
+                  <circle cx="575" cy="238" r="13" fill="#1E3A8A"/><text x="575" y="242" text-anchor="middle" fill="#fff" font-size="10" font-weight="800">T1</text>
+                  <text x="556" y="242" text-anchor="end" font-size="10.5" font-weight="800" fill="#1E3A8A">柴油 25% 低負載濕堆積</text>
+
+                  <circle cx="520" cy="278" r="12" fill="#0284C7"/><text x="520" y="282" text-anchor="middle" fill="#fff" font-size="10" font-weight="800">T2</text>
+                  <text x="502" y="282" text-anchor="end" font-size="10.5" font-weight="700" fill="#0369A1">第 3 變電站 CT/PT 黑箱</text>
+
+                  <circle cx="445" cy="316" r="12" fill="#0284C7"/><text x="445" y="320" text-anchor="middle" fill="#fff" font-size="10" font-weight="800">T3</text>
+                  <text x="462" y="320" font-size="10.5" font-weight="700" fill="#0369A1">瑞穗 158kWp 復歸過充</text>
+
+                  <circle cx="605" cy="336" r="12" fill="#0284C7"/><text x="605" y="340" text-anchor="middle" fill="#fff" font-size="10" font-weight="800">T4</text>
+                  <text x="588" y="340" text-anchor="end" font-size="10.5" font-weight="700" fill="#0369A1">經費天花板含未定量項</text>
+
+                  <!-- Low-Low -->
+                  <circle cx="195" cy="272" r="12" fill="#64748B"/><text x="195" y="276" text-anchor="middle" fill="#fff" font-size="10" font-weight="800">C1</text>
+                  <text x="212" y="276" font-size="10.5" fill="#475569">150 萬量測儀器租用吃緊</text>
+                </svg>
+              </div>
+
+              <!-- Right Countermeasures -->
+              <div style="display:flex;flex-direction:column;gap:10px;">
+                <div class="card">
+                  <div class="card-title"><span>四大紅區風險防禦對策</span><span class="tag tag-red">開標前必做</span></div>
+                  <ul class="bullet-list" style="font-size:11.8px;">
+                    <li><strong>R1 履約無封頂</strong>：工作執行計畫書明列人力投入人月曲線；等標期即提釋疑確認延宕調費機制，非可歸責延宕依契約第 7 條存證協議增費。</li>
+                    <li><strong>R2 60% 綁統包</strong>：投標前完成延宕 6 個月現金流壓力測試；統包需求書切細里程碑並做好市調避免流標。</li>
+                    <li><strong>R3 懲罰違約金（20%）</strong>：投保專業責任險<strong>須明載承保審查過失</strong>、保額對應契約價金（損害上限＝契約價金）；內部建立雙人審查與技師覆核。</li>
+                    <li><strong>R4 跨電號與台電 30% 設審款</strong>：規劃期即辦台電會勘確立邊界；同步檢核高壓汰換符合用戶用電設備裝置規則第 1012 條。</li>
+                  </ul>
+                </div>
+                <div class="callout" style="font-size:11.8px;">
+                  <strong>量測費 150 萬控管：</strong>盤點自有 Class A 分析儀、暫態錄波、IV 曲線儀與熱像儀校正效期；不足項目採租用預估足額成本。
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <footer class="slide-footer">
+            <span>Source：11-契約第 5、7、14、15 條；12-投標須知第 83.3 點；盡職調查報告「五、風險提醒」</span>
+            <span>14 / 16</span>
+          </footer>
+        </section>
+
+        <!-- ==================== SLIDE 15: WINNING STRATEGY MATRIX ==================== -->
+        <section class="slide"
+          data-section="評分打法矩陣"
+          data-archetype="版型 5：麥肯錫矩陣"
+          data-title="搶標致勝架構：以預算全額 647 萬投標，用「點破缺口＋30 天即發包能力」橫掃 6 大評選維度"
+          data-pace="建議講解：35 秒"
+          data-conclusion="若高層拍板 Go，我們的搶標戰術非常明確：報滿 647 萬全額，以『看穿計畫書缺口、30 天交出可發包統包需求書』為主軸，逐項擊破六大評選維度。"
+          data-detail="這張麥肯錫評選打法矩陣將 100 分拆解成六列：最高權重 25 分鎖定三階段驗證 SOP、自有量測儀器校正證明與 EMS 檢核表；20 分規劃構想直接端出修正柴油低負載後的 48 小時初算與長交期先行策略；20 分團隊組織列出執業電機技師主持與 IEC 62443 資安專家完整勞保與人月表；最後 10 分簡報答詢則鎖定四大必考題預演至少兩次。"
+          data-transition="最後一頁，我們把所有準備工作收斂成 D+0 到開標前的 12 項具體行動清單與競爭情報雷達。">
+          <header class="slide-header">
+            <div class="slide-meta-row">
+              <span class="slide-kicker"><span class="dot"></span>14 · 六大評選維度致勝素材與差異化矩陣</span>
+              <span class="archetype-pill">版型 5：麥肯錫矩陣</span>
+            </div>
+            <h2 class="action-title">報滿 647 萬全額，以<span class="hl-blue">「點破計畫書缺口＋30 天交出統包需求書」</span>橫掃六大評選項目</h2>
+          </header>
+
+          <div class="slide-body">
+            <div style="flex:1;overflow:hidden;">
+              <table class="mc-table" style="font-size:12px;">
+                <thead>
+                  <tr>
+                    <th style="width:185px;">評選項目（配分）</th>
+                    <th style="width:390px;">必備致勝素材（寫進 ≦80 頁服務建議書）</th>
+                    <th>差異化加分亮點（拉開與對手差距）</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr style="background:#EFF6FF;">
+                    <td><strong style="color:#0284C7;">1. 專案管理、監造及測試驗證（25 分）</strong><br><span class="tag tag-blue">同分決勝關鍵</span></td>
+                    <td>三階段 48h 驗證 SOP 與量測點位圖；自有量測設備清冊（Class A 電品多點同步、暫態錄波、IV 曲線儀、熱像儀）與校正證明；M&amp;V 證照；檢驗停留點表；停電改接流程；EMS 交付檢核表。</td>
+                    <td>強調<strong>零統包代量、獨立把關</strong>；把 14 項 SAT 檢查點與退件防錯雙人審查 SOP 圖表化呈現。</td>
+                  </tr>
+                  <tr>
+                    <td><strong>2. 規劃構想及統包需求書能力（20 分）</strong></td>
+                    <td>放一版 48h 逐時能量平衡初算（含低負載油耗修正）；孤島邊界與黑啟動序列圖；統包需求書目錄架構；「長交期設備先行＋細設分批核定」發包策略。</td>
+                    <td>直接展現<strong>決標 30 天（跨春節）交出可發包統包需求書</strong>之預製範本，化解學校時程焦慮。</td>
+                  </tr>
+                  <tr>
+                    <td><strong>3. 專案組織及人力配置（20 分）</strong></td>
+                    <td>執業電機技師任計畫主持人；電力系統（保護協調／模擬）、EMS／資安（IEC 62443）、品管合格監造、量測人員各就各位；檢附全員勞保證明與人月數表。</td>
+                    <td>逐月對應人月曲線與長駐 PM 派駐期程，兼顧評選信任與日後延宕增費依據。</td>
+                  </tr>
+                  <tr>
+                    <td><strong>4. 計畫需求之瞭解（15 分）</strong></td>
+                    <td>完整法規清單（電業法、再生能源、併聯技術要點、儲能消防指引、VPC、用戶用電設備裝置規則第 1012 條）。</td>
+                    <td><strong>主動點名 9 大技術缺口</strong>（柴油低載、515.1kW、第3站 CT/PT、瑞穗 158kWp 復歸、EMS 原始碼）並逐一給解法。</td>
+                  </tr>
+                  <tr>
+                    <td><strong>5. 廠商過去履約績效（10 分）</strong></td>
+                    <td>近 5 年微電網、儲能、高壓工程之規劃、設計、監造或 PCM 實績證明文件。</td>
+                    <td>釋疑確認 EPC 統包實績是否採認，最大化可計分實績組合。</td>
+                  </tr>
+                  <tr>
+                    <td><strong>6. 簡報及答詢（10 分）</strong></td>
+                    <td>計畫主持人親自執行 12 分鐘簡報（精準配速）＋ 8 分鐘答詢攻防題庫。</td>
+                    <td>題庫全面預置四大必考題：<strong>跨電號、柴油低負載、≦100 ms 準無縫、時程落後 4 個月備案</strong>。</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <footer class="slide-footer">
+            <span>Source：13-評選須知、盡職調查報告「六、搶標重點追蹤：評分打法」</span>
+            <span>15 / 16</span>
+          </footer>
+        </section>
+
+        <!-- ==================== SLIDE 16: ACTION ROADMAP & COMPETITIVE INTEL ==================== -->
+        <section class="slide"
+          data-section="行動清單與情報"
+          data-archetype="版型 4：連鎖論法"
+          data-title="即刻啟動 12 項搶標行動路線圖與競爭情報雷達，D+0 先拍板「PCM vs. 1.32 億統包」"
+          data-pace="建議講解：35 秒"
+          data-conclusion="最後請團隊聚焦這張四階段 12 項行動路線圖：今天（D+0）唯一最高優先任務就是查詢採購網期程並確認資格與關係企業狀態，讓高層拍板『搶 PCM 還是搶 1.32 億統包』。"
+          data-detail="一旦高層確認 Go，立即進入第二階段預約陳鴻翔技正現勘並發出四大書面釋疑，第三階段組建技師團隊與完成延宕半年現金流試算，第四階段產出 80 頁建議書並預演兩次。同時請留意下方競爭情報：附件 18、19 細節極度完整，極可能有顧問協助撰寫，務必追查該顧問及各校 PCM 決標名單，並依公開的 7 位委員專長微調簡報重心。"
+          data-transition="以上為嘉義大學蘭潭校區微電網 PCM 標案 10 分鐘盡職調查完整簡報。歡迎返回首頁於『團隊協作面板』直接更新三道閘門決議、勾選行動清單與登錄現勘筆記！">
+          <header class="slide-header">
+            <div class="slide-meta-row">
+              <span class="slide-kicker"><span class="dot"></span>15 · 四階段 12 項搶標行動路線圖與競爭情報雷達</span>
+              <span class="archetype-pill">版型 4：連鎖論法</span>
+            </div>
+            <h2 class="action-title">D+0 立即完成<span class="hl-amber">資格查核與集團拍板</span>，依四階段推進 12 項行動與競爭對手情報</h2>
+          </header>
+
+          <div class="slide-body">
+            <!-- 4-Phase Chevron Roadmap SVG -->
+            <div style="height:268px;" class="svg-box">
+              <svg viewBox="0 0 1160 248" xmlns="http://www.w3.org/2000/svg">
+                <!-- Phase 1 -->
+                <polygon points="10,12 268,12 288,34 268,56 10,56" fill="#DC2626"/>
+                <text x="142" y="39" text-anchor="middle" fill="#fff" font-size="13.5" font-weight="800">Phase 1｜D+0 閘門拍板</text>
+                <rect x="10" y="64" width="272" height="176" rx="6" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="1.5"/>
+                <text x="22" y="88" font-size="11.5" font-weight="800" fill="#991B1B">1. 查採購網 115Q0803-1</text>
+                <text x="22" y="104" font-size="10.5" fill="#475569">截止／開標／釋疑期／委員名單</text>
+                <text x="22" y="130" font-size="11.5" font-weight="800" fill="#991B1B">2. 確認技顧資格與技師證</text>
+                <text x="22" y="146" font-size="10.5" fill="#475569">營業項目含電機、公會會員證</text>
+                <text x="22" y="172" font-size="11.5" font-weight="800" fill="#991B1B">3. 高層拍板 PCM vs. 統包</text>
+                <text x="22" y="188" font-size="10.5" fill="#475569">釐清進金生實業關係企業認定</text>
+                <rect x="22" y="206" width="248" height="24" rx="4" fill="#DC2626"/>
+                <text x="146" y="222" text-anchor="middle" fill="#fff" font-size="10.5" font-weight="800">★ 任一未過即停止投入</text>
+
+                <!-- Phase 2 -->
+                <polygon points="298,12 556,12 576,34 556,56 298,56 318,34" fill="#D97706"/>
+                <text x="440" y="39" text-anchor="middle" fill="#fff" font-size="13.5" font-weight="800">Phase 2｜現勘與釋疑</text>
+                <rect x="300" y="64" width="272" height="176" rx="6" fill="#FFFBEB" stroke="#FCD34D" stroke-width="1.5"/>
+                <text x="312" y="88" font-size="11.5" font-weight="800" fill="#92400E">4. 預約蘭潭校區現勘</text>
+                <text x="312" y="104" font-size="10.5" fill="#475569">陳鴻翔技正 05-2717131</text>
+                <text x="312" y="120" font-size="10.5" fill="#475569">總站、第3站、瑞穗機組、光電址</text>
+                <text x="312" y="148" font-size="11.5" font-weight="800" fill="#92400E">5. 等標期 1/4 前提出釋疑</text>
+                <text x="312" y="164" font-size="10.5" fill="#475569">• 統包延宕服務費調整機制</text>
+                <text x="312" y="180" font-size="10.5" fill="#475569">• 長駐 PM 起算日與督導期保險</text>
+                <text x="312" y="196" font-size="10.5" fill="#475569">• 完整版附件 18／19 提供時點</text>
+                <text x="312" y="212" font-size="10.5" fill="#475569">• EPC 實績是否採認</text>
+
+                <!-- Phase 3 -->
+                <polygon points="586,12 844,12 864,34 844,56 586,56 606,34" fill="#1E3A8A"/>
+                <text x="728" y="39" text-anchor="middle" fill="#fff" font-size="13.5" font-weight="800">Phase 3｜組隊與試算</text>
+                <rect x="588" y="64" width="272" height="176" rx="6" fill="#EFF6FF" stroke="#93C5FD" stroke-width="1.5"/>
+                <text x="600" y="88" font-size="11.5" font-weight="800" fill="#1E3A8A">6. 編制專案組隊名冊</text>
+                <text x="600" y="104" font-size="10.5" fill="#475569">技師／資安／監造證照、勞保、人月</text>
+                <text x="600" y="130" font-size="11.5" font-weight="800" fill="#1E3A8A">7. 彙整 5 年實績證明</text>
+                <text x="600" y="146" font-size="10.5" fill="#475569">微電網、儲能、高壓規劃監造實績</text>
+                <text x="600" y="172" font-size="11.5" font-weight="800" fill="#1E3A8A">8–9. 現金流壓測＋險種報價</text>
+                <text x="600" y="188" font-size="10.5" fill="#475569">模擬延宕 6 月成本、專業責任險</text>
+                <text x="600" y="204" font-size="10.5" fill="#475569">與 25 萬元履約保證金額度</text>
+
+                <!-- Phase 4 -->
+                <polygon points="874,12 1134,12 1152,34 1134,56 874,56 894,34" fill="#051C2C"/>
+                <text x="1016" y="39" text-anchor="middle" fill="#38BDF8" font-size="13.5" font-weight="800">Phase 4｜封標與預演</text>
+                <rect x="876" y="64" width="274" height="176" rx="6" fill="#F8FAFC" stroke="#051C2C" stroke-width="1.6"/>
+                <text x="888" y="88" font-size="11.5" font-weight="800" fill="#051C2C">10. 服務建議書完稿印製</text>
+                <text x="888" y="104" font-size="10.5" fill="#475569">正文 ≦80 頁、10 份、評選對照表</text>
+                <text x="888" y="120" font-size="10.5" font-weight="700" fill="#B91C1C">嚴禁載明價格！</text>
+                <text x="888" y="146" font-size="11.5" font-weight="800" fill="#051C2C">11. 簡報與題庫預演 ≧2 次</text>
+                <text x="888" y="162" font-size="10.5" fill="#475569">計畫主持人親簡 12 分＋8 分答詢</text>
+                <text x="888" y="188" font-size="11.5" font-weight="800" fill="#051C2C">12. 全套投標封件檢核</text>
+                <text x="888" y="204" font-size="10.5" fill="#475569">標單(647萬)、估價單、切結書 1/2、</text>
+                <text x="888" y="220" font-size="10.5" fill="#475569">聲明書、資格審查表、領標憑據</text>
+              </svg>
+            </div>
+
+            <!-- Competitive Intelligence Strip -->
+            <div class="card card-navy" style="padding:12px 16px;">
+              <div class="card-title"><span>競爭情報三大必查雷達（建議於首頁 Supabase 團隊面板持續回填）</span><span class="tag tag-amber">情報戰</span></div>
+              <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;font-size:12px;color:#E2E8F0;line-height:1.5;">
+                <div><strong style="color:#38BDF8;">① 追查附件 18／19 幕後顧問：</strong>公開版技術細節極為完整，高度疑似外部顧問協助撰寫；若該顧問前來投 PCM 將是最強對手，須立即清查嘉大近期委託案決標公告。</div>
+                <div><strong style="color:#38BDF8;">② 建立跨校對手決標名單：</strong>清查教育部同補助計畫其他學校，及台電「大學節能及電力韌性推動建置案」各校（中正、中興、中山、中央等）PCM 決標廠商。</div>
+                <div><strong style="color:#38BDF8;">③ 拆解 7 位評選委員專長：</strong>評選委員名單已公開於政府電子採購網；立即分析委員背景（電力系統／儲能／資安），精準微調 12 分鐘簡報與答詢權重。</div>
+              </div>
+            </div>
+          </div>
+
+          <footer class="slide-footer">
+            <span>Source：盡職調查報告「六、搶標重點追蹤：行動清單與競爭情報」；本頁 12 項清單已同步連動首頁 Supabase 團隊協作面板</span>
+            <span>16 / 16</span>
+          </footer>
+        </section>
+
+      </div>
+    </div>
+
+    <!-- Speaker Notes Drawer -->
+    <aside class="notes-drawer" id="notesDrawer">
+      <div style="display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(255,255,255,0.12);padding-bottom:10px;">
+        <div>
+          <div style="font-size:14px;font-weight:800;color:#fff;">講者三段式備忘稿</div>
+          <div id="notePace" style="font-size:11.5px;color:#FBBF24;margin-top:2px;">建議講解：35–40 秒</div>
+        </div>
+        <span style="font-size:11px;color:#94A3B8;">快捷鍵 N 切換</span>
+      </div>
+      <div class="notes-section">
+        <h4>① 本頁核心結論（Key Takeaway）</h4>
+        <p id="noteConclusion"></p>
+      </div>
+      <div class="notes-section">
+        <h4>② 證據與補充說明（Supporting Detail）</h4>
+        <p id="noteDetail"></p>
+      </div>
+      <div class="notes-section">
+        <h4>③ 下一頁轉場語（Transition）</h4>
+        <p id="noteTransition"></p>
+      </div>
+      <div style="font-size:11px;color:#64748B;line-height:1.6;margin-top:auto;">
+        快捷鍵指南：<code>←</code> / <code>→</code> 換頁 ｜ <code>N</code> 備忘稿 ｜ <code>G</code> 投影片總覽 ｜ <code>/</code> 簡報搜尋 ｜ <code>T</code> 10 分鐘計時器
+      </div>
+    </aside>
+  </main>
+
+  <!-- Overview Modal -->
+  <div class="modal-backdrop" id="overviewModal">
+    <div class="modal-panel">
+      <div class="modal-header">
+        <strong>投影片目錄總覽（共 16 頁 · 10 分鐘完整版）</strong>
+        <button class="tb-btn" data-close-modal>✕ 關閉</button>
+      </div>
+      <div class="modal-body">
+        <div class="overview-grid" id="overviewGrid"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- In-Deck Search Modal -->
+  <div class="modal-backdrop" id="deckSearchModal">
+    <div class="modal-panel" style="width:min(760px,92vw);">
+      <div class="modal-header">
+        <strong>簡報內關鍵字檢索（支援多關鍵字空白分隔）</strong>
+        <button class="tb-btn" data-close-modal>✕ 關閉</button>
+      </div>
+      <div class="modal-body">
+        <input type="text" id="deckSearchInput" class="deck-search-input" placeholder="輸入關鍵字，例如：利益迴避、100 ms、低負載、跨電號、25 分、30 天...">
+        <div id="deckSearchResults"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../assets/js/deck.js"></script>
+</body>
+</html>

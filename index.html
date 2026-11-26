@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>大學微電網標案盡職調查暨決策簡報平台</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Noto Sans TC', 'sans-serif'] },
+          colors: {
+            navy: '#051C2C',
+            royal: '#1E3A8A',
+            electric: '#00A9F4',
+            amber: '#D97706'
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Noto Sans TC', -apple-system, BlinkMacSystemFont, sans-serif; background: #F8FAFC; color: #0F172A; }
+    mark { background: #FDE68A; color: #051C2C; padding: 0 3px; border-radius: 3px; font-weight: 700; }
+    .custom-pin {
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 800; font-size: 11px; color: #fff;
+      border: 2.5px solid #fff; border-radius: 999px;
+      box-shadow: 0 3px 10px rgba(5,28,44,0.45);
+      transition: transform 0.15s ease;
+    }
+    .custom-pin:hover { transform: scale(1.15); }
+    .leaflet-popup-content-wrapper { border-radius: 10px; padding: 0; overflow: hidden; }
+    .leaflet-popup-content { margin: 0; width: 310px !important; }
+    .scrollbar-thin::-webkit-scrollbar { width: 6px; height: 6px; }
+    .scrollbar-thin::-webkit-scrollbar-thumb { background: #CBD5E1; border-radius: 999px; }
+  </style>
+</head>
+<body class="antialiased">
+
+  <!-- Sticky Top Navigation -->
+  <header class="sticky top-0 z-40 bg-navy/95 backdrop-blur border-b border-white/10 text-slate-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-4">
+      <div class="flex items-center gap-3 min-w-0">
+        <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-electric to-royal flex items-center justify-center font-black text-white text-sm shrink-0 shadow">
+          MG
+        </div>
+        <div class="min-w-0">
+          <div class="font-extrabold text-sm sm:text-base tracking-tight text-white truncate">大學微電網標案盡職調查暨決策簡報平台</div>
+          <div class="text-[11px] text-slate-400 hidden sm:block">進能服／進金生能源團隊內部平台 · 麥肯錫結構化簡報 ✕ SVG 圖解 ✕ 設備地圖 ✕ Supabase</div>
+        </div>
+      </div>
+
+      <nav class="hidden lg:flex items-center gap-5 text-sm font-medium text-slate-300">
+        <a href="#meetings-section" class="hover:text-electric transition">會議簡報庫</a>
+        <a href="#map-section" class="hover:text-electric transition">地理設備圖台</a>
+        <a href="#collab-section" class="hover:text-electric transition">三道閘門與行動</a>
+        <a href="decks/ncyu-lantan-pcm-dd.html" class="text-sky-300 hover:text-white font-bold transition">M01 簡報 →</a>
+      </nav>
+
+      <div class="flex items-center gap-2 shrink-0">
+        <button id="openSearchModalBtn" class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white/10 hover:bg-white/20 border border-white/15 text-xs text-slate-200 transition">
+          <span>🔍 檢索</span>
+          <kbd class="hidden sm:inline px-1.5 py-0.5 text-[10px] rounded bg-navy/80 text-slate-300 border border-white/15">Ctrl K</kbd>
+        </button>
+        <button id="authStatusBtn" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-amber/20 hover:bg-amber/30 border border-amber/40 text-xs font-semibold text-amber-200 transition">
+          <span class="w-2 h-2 rounded-full bg-amber-400" id="authDot"></span>
+          <span id="authBtnLabel">本機模式・登入同步</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Executive War-Room Banner -->
+  <section class="bg-gradient-to-br from-navy via-[#0B2942] to-[#13385E] text-white border-b border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-10 sm:py-12">
+      <div class="grid lg:grid-cols-12 gap-8 items-center">
+        <div class="lg:col-span-8 space-y-4">
+          <div class="flex flex-wrap items-center gap-2">
+            <span class="px-2.5 py-1 rounded-full text-xs font-bold bg-electric/20 text-sky-300 border border-electric/40">對象：自己、團隊成員</span>
+            <span class="px-2.5 py-1 rounded-full text-xs font-bold bg-amber/25 text-amber-300 border border-amber/50">嘉義大學 115Q0803-1 · 有條件 Go（先過三道閘門）</span>
+            <span class="px-2.5 py-1 rounded-full text-xs font-medium bg-white/10 text-slate-300">更新日期：2026-11-26</span>
+          </div>
+          <h1 class="text-2xl sm:text-4xl font-black tracking-tight leading-tight">
+            大學微電網標案<span class="text-sky-400">盡職調查暨決策簡報</span>平台
+          </h1>
+          <p class="text-sm sm:text-base text-slate-300 leading-relaxed max-w-3xl">
+            以<strong class="text-white">麥肯錫金字塔原理與無雜訊視覺架構</strong>萃取教育部與大專校院電力韌性微電網標案情報。首期完整上線「<strong class="text-amber-300">國立嘉義大學蘭潭校區微電網 PCM 標案（647 萬 vs. 後續 1.32 億統包）</strong>」10 分鐘 16 頁決策簡報、12 張原創重繪 SVG 圖解、13 處衛星設備地圖與 Supabase 團隊協作面板，並預留後續各次會議與多校標案擴充框架。
+          </p>
+          <div class="flex flex-wrap gap-3 pt-2">
+            <a href="decks/ncyu-lantan-pcm-dd.html" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-electric hover:bg-sky-400 text-navy font-extrabold text-sm shadow-lg shadow-sky-950/40 transition">
+              <span>▶ 開啟 M01 麥肯錫 10 分鐘簡報（16 頁）</span>
+            </a>
+            <a href="#map-section" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-white/10 hover:bg-white/20 border border-white/20 text-white font-bold text-sm transition">
+              <span>🛰 查看標案與設備衛星地圖</span>
+            </a>
+            <a href="#collab-section" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-amber/20 hover:bg-amber/30 border border-amber/40 text-amber-200 font-bold text-sm transition">
+              <span>✓ 三道閘門決議與 12 項行動</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Executive Verdict Box -->
+        <div class="lg:col-span-4 bg-white/5 border border-white/15 rounded-xl p-5 backdrop-blur-sm space-y-3">
+          <div class="flex items-center justify-between border-b border-white/10 pb-2.5">
+            <span class="text-xs font-extrabold uppercase tracking-wider text-sky-300">總監核心戰略結論</span>
+            <span class="text-xs font-bold px-2 py-0.5 rounded bg-amber/25 text-amber-300">115Q0803-1</span>
+          </div>
+          <p class="text-sm text-slate-200 leading-relaxed">
+            本案是 <strong class="text-white">647 萬元</strong>固定費用 PCM，不是 <strong class="text-amber-300">1.32 億元</strong>統包。價格不評分，勝負看建議書與 12 分鐘簡報。
+          </p>
+          <ul class="text-xs text-slate-300 space-y-1.5">
+            <li><strong class="text-red-300">閘門 1｜</strong>須為電機技顧／技師事務所，<strong>禁共同投標</strong></li>
+            <li><strong class="text-red-300">閘門 2｜</strong>得標與關係企業<strong>禁投 1.32 億統包與供貨</strong></li>
+            <li><strong class="text-amber-300">閘門 3｜</strong>497 萬無封頂履約＋1 年督導，<strong>60% 綁統包</strong></li>
+          </ul>
+          <div class="pt-1 flex justify-between items-center text-[11px] text-slate-400">
+            <span>現勘窗口：陳鴻翔技正 05-2717131</span>
+            <a href="decks/ncyu-lantan-pcm-dd.html#slide-2" class="text-sky-300 hover:underline font-semibold">詳見第 2–3 頁 →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dynamic KPI Strip -->
+      <div id="kpiStrip" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 mt-8"></div>
+    </div>
+  </section>
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 py-8 space-y-12">
+
+    <!-- ==================== 1. GLOBAL KEYWORD SEARCH ==================== -->
+    <section id="search-section" class="bg-white rounded-2xl border border-slate-200 shadow-sm p-5 sm:p-6">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
+        <div>
+          <h2 class="text-lg font-extrabold text-navy flex items-center gap-2">
+            <span>🔍 全域關鍵字即時檢索引擎</span>
+            <span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-sky-100 text-royal">跨簡報頁碼 ✕ 設備地圖</span>
+          </h2>
+          <p class="text-xs text-slate-500 mt-0.5">輸入單一或多個空白分隔關鍵字，立即定位對應簡報頁碼或地圖設備點位並一鍵跳轉</p>
+        </div>
+        <span id="searchCountBadge" class="text-xs font-bold text-slate-500"></span>
+      </div>
+
+      <div class="relative">
+        <input id="inlineSearchInput" type="text"
+          placeholder="搜尋任何技術規格、法規、風險或人員，例如：利益迴避、100 ms、低負載、跨電號、第3變電站、IEC 62443、25分、陳鴻翔..."
+          class="w-full pl-11 pr-24 py-3 rounded-xl border-2 border-slate-200 focus:border-electric focus:outline-none text-sm bg-slate-50 focus:bg-white transition">
+        <span class="absolute left-3.5 top-3.5 text-slate-400">🔎</span>
+        <button id="clearSearchBtn" class="hidden absolute right-3 top-2.5 px-2.5 py-1 text-xs rounded-lg bg-slate-200 hover:bg-slate-300 text-slate-700 font-semibold">清除</button>
+      </div>
+
+      <!-- Hot keyword chips -->
+      <div class="flex flex-wrap items-center gap-1.5 mt-3">
+        <span class="text-xs font-semibold text-slate-400 mr-1">熱門快查：</span>
+        <button class="hot-chip px-2.5 py-1 rounded-full text-xs font-semibold bg-slate-100 hover:bg-navy hover:text-white text-slate-700 transition">三道閘門</button>
+        <button class="hot-chip px-2.5 py-1 rounded-full text-xs font-semibold bg-slate-100 hover:bg-navy hover:text-white text-slate-700 transition">利益迴避</button>
+        <button class="hot-chip px-2.5 py-1 rounded-full text-xs font-semibold bg-slate-100 hover:bg-navy hover:text-white text-slate-700 transition">48小時</button>
+        <button class="hot-chip px-2.5 py-1 rounded-full text-xs font-semibold bg-slate-100 hover:bg-navy hover:text-white text-slate-700 transition">100 ms</button>
+        <button class="hot-chip px-2.5 py-1 rounded-full text-xs font-semibold bg-slate-100 hover:bg-navy hover:text-white text-slate-700 transition">低負載</button>
+        <button class="hot-chip px-2.5 py-1 rounded-full text-xs font-semibold bg-slate-100 hover:bg-navy hover:text-white text-slate-700 transition">跨電號</button>
+        <button class="hot-chip px-2.5 py-1 rounded-full text-xs font-semibold bg-slate-100 hover:bg-navy hover:text-white text-slate-700 transition">第3變電站</button>
+        <button class="hot-chip px-2.5 py-1 rounded-full text-xs font-semibold bg-slate-100 hover:bg-navy hover:text-white text-slate-700 transition">IEC 62443</button>
+        <button class="hot-chip px-2.5 py-1 rounded-full text-xs font-semibold bg-slate-100 hover:bg-navy hover:text-white text-slate-700 transition">25分</button>
+        <button class="hot-chip px-2.5 py-1 rounded-full text-xs font-semibold bg-slate-100 hover:bg-navy hover:text-white text-slate-700 transition">30天</button>
+      </div>
+
+      <!-- Inline Results Container -->
+      <div id="inlineSearchResults" class="hidden mt-4 grid sm:grid-cols-2 gap-3 max-h-96 overflow-y-auto scrollbar-thin pr-1"></div>
+    </section>
+
+    <!-- ==================== 2. EXTENSIBLE MEETINGS & BRIEFINGS HUB ==================== -->
+    <section id="meetings-section" class="space-y-5">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-3">
+        <div>
+          <span class="text-xs font-extrabold uppercase tracking-wider text-royal">EXTENSIBLE BRIEFING ARCHITECTURE</span>
+          <h2 class="text-2xl font-black text-navy mt-0.5">標案與各次會議簡報庫（預留擴充框架）</h2>
+          <p class="text-sm text-slate-600 mt-1">由 <code class="text-xs bg-slate-200 px-1.5 py-0.5 rounded">data/hub.json</code> 驅動，每次新會議或新大學標案完稿後直接掛載上線（詳見 <a href="docs/EXPANSION.md" target="_blank" class="text-royal font-semibold underline">擴充作業指南</a>）</p>
+        </div>
+        <div class="flex flex-wrap gap-1.5" id="stageFilters">
+          <button data-stage="all" class="stage-btn px-3 py-1.5 rounded-lg text-xs font-bold bg-navy text-white">全部會議</button>
+          <button data-stage="盡職調查" class="stage-btn px-3 py-1.5 rounded-lg text-xs font-bold bg-white border border-slate-300 text-slate-700 hover:bg-slate-100">盡職調查</button>
+          <button data-stage="現勘紀要" class="stage-btn px-3 py-1.5 rounded-lg text-xs font-bold bg-white border border-slate-300 text-slate-700 hover:bg-slate-100">現勘紀要</button>
+          <button data-stage="評選備標" class="stage-btn px-3 py-1.5 rounded-lg text-xs font-bold bg-white border border-slate-300 text-slate-700 hover:bg-slate-100">評選備標</button>
+          <button data-stage="跨校戰情" class="stage-btn px-3 py-1.5 rounded-lg text-xs font-bold bg-white border border-slate-300 text-slate-700 hover:bg-slate-100">跨校戰情</button>
+        </div>
+      </div>
+
+      <div id="meetingsGrid" class="grid md:grid-cols-2 gap-5"></div>
+
+      <!-- Quick Slide Index for Flagship M01 -->
+      <div class="bg-white rounded-2xl border border-slate-200 p-5 shadow-sm">
+        <div class="flex items-center justify-between mb-3">
+          <h3 class="text-sm font-extrabold text-navy">📑 M01 嘉義大學盡職調查簡報 ── 16 頁麥肯錫章節快速直達</h3>
+          <a href="decks/ncyu-lantan-pcm-dd.html" class="text-xs font-bold text-royal hover:underline">進入全螢幕簡報模式 →</a>
+        </div>
+        <div id="m01QuickSlides" class="grid grid-cols-2 sm:grid-cols-4 gap-2"></div>
+      </div>
+    </section>
+
+    <!-- ==================== 3. INTERACTIVE GIS MAP ==================== -->
+    <section id="map-section" class="space-y-4">
+      <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-3">
+        <div>
+          <span class="text-xs font-extrabold uppercase tracking-wider text-royal">GEOSPATIAL ASSET &amp; TENDER MAP</span>
+          <h2 class="text-2xl font-black text-navy mt-0.5">標案與設備互動地理圖台（衛星圖 ✕ 高壓路徑）</h2>
+          <p class="text-sm text-slate-600 mt-1">精準標註嘉義大學蘭潭校區 13 處核心設備、10 座變電站與 5 條高壓／孤島供電路徑，並可切換全台大專校院標案 Pipeline 總覽</p>
+        </div>
+        <div class="flex flex-wrap items-center gap-2">
+          <button id="btnViewCampus" class="px-3.5 py-2 rounded-lg text-xs font-extrabold bg-navy text-white shadow-sm">🛰 嘉大蘭潭設備詳圖</button>
+          <button id="btnViewTaiwan" class="px-3.5 py-2 rounded-lg text-xs font-extrabold bg-white border border-slate-300 text-slate-700 hover:bg-slate-100">🇹🇼 全台大學標案總覽</button>
+          <button id="btnToggleBasemap" class="px-3 py-2 rounded-lg text-xs font-bold bg-sky-50 border border-sky-200 text-royal hover:bg-sky-100">切換街道／衛星底圖</button>
+        </div>
+      </div>
+
+      <!-- Category Filter Pills -->
+      <div id="mapCategoryFilters" class="flex flex-wrap items-center gap-2">
+        <button data-cat="all" class="map-cat-btn px-3 py-1 rounded-full text-xs font-bold bg-navy text-white">全部設備 (13)</button>
+        <button data-cat="core" class="map-cat-btn px-3 py-1 rounded-full text-xs font-bold bg-white border border-slate-300 text-slate-700">🟠 核心電源 (BESS/柴油)</button>
+        <button data-cat="shelter" class="map-cat-btn px-3 py-1 rounded-full text-xs font-bold bg-white border border-slate-300 text-slate-700">🔵 48h 承諾避難三館</button>
+        <button data-cat="pv" class="map-cat-btn px-3 py-1 rounded-full text-xs font-bold bg-white border border-slate-300 text-slate-700">🟡 太陽光電場域 (800 kWp)</button>
+        <button data-cat="grid" class="map-cat-btn px-3 py-1 rounded-full text-xs font-bold bg-white border border-slate-300 text-slate-700">⚫ 高壓介面與變電站</button>
+        <button data-cat="risk" class="map-cat-btn px-3 py-1 rounded-full text-xs font-bold bg-white border border-red-300 text-red-700">🔴 重點風險查證點</button>
+      </div>
+
+      <div class="grid lg:grid-cols-12 gap-4 bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
+        <!-- Left Equipment Sidebar -->
+        <div class="lg:col-span-4 border-b lg:border-b-0 lg:border-r border-slate-200 flex flex-col max-h-[560px]">
+          <div class="p-3.5 bg-slate-50 border-b border-slate-200 flex items-center justify-between">
+            <span id="mapListTitle" class="text-xs font-extrabold text-navy">蘭潭校區設備與風險點清單</span>
+            <span class="text-[11px] text-slate-500">點擊定位並展開規格</span>
+          </div>
+          <div id="mapSidebarList" class="divide-y divide-slate-100 overflow-y-auto scrollbar-thin flex-1"></div>
+          <!-- Route Legend -->
+          <div class="p-3 bg-slate-50 border-t border-slate-200 text-[11px] space-y-1 text-slate-600">
+            <div class="font-bold text-navy mb-1">電力線路圖例：</div>
+            <div class="flex flex-wrap gap-x-3 gap-y-1">
+              <span><span class="inline-block w-3 h-1 bg-orange-500 align-middle mr-1"></span>48h 孤島路徑</span>
+              <span><span class="inline-block w-3 h-1 bg-red-500 align-middle mr-1"></span>高壓汰換 700m</span>
+              <span><span class="inline-block w-3 h-1 bg-sky-500 align-middle mr-1"></span>電號一高壓</span>
+              <span><span class="inline-block w-3 h-1 bg-emerald-500 align-middle mr-1"></span>電號二／S6 路徑</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Map Canvas -->
+        <div class="lg:col-span-8 relative">
+          <div id="microgridMap" class="w-full h-[460px] lg:h-[560px] z-10"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 4. TEAM COLLABORATION & SUPABASE ==================== -->
+    <section id="collab-section" class="space-y-5">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-3">
+        <div>
+          <span class="text-xs font-extrabold uppercase tracking-wider text-royal">TEAM COLLABORATION ✕ SUPABASE BAAS</span>
+          <h2 class="text-2xl font-black text-navy mt-0.5">團隊盡職調查決策與行動協作中心</h2>
+          <p class="text-sm text-slate-600 mt-1">串接 Supabase PostgreSQL + Auth + Row Level Security (RLS)；未登入亦可於本機即時試算與紀錄，登入後即刻雲端同步給團隊成員</p>
+        </div>
+        <div id="syncStatusPill" class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-100 border border-slate-200 text-xs font-semibold text-slate-700">
+          <span class="w-2 h-2 rounded-full bg-amber-500"></span>
+          <span>目前為本機暫存模式（登入後同步至 Supabase）</span>
+        </div>
+      </div>
+
+      <!-- Tabs -->
+      <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
+        <div class="flex border-b border-slate-200 bg-slate-50 px-4 pt-3 gap-2 overflow-x-auto">
+          <button data-tab="gates" class="collab-tab px-4 py-2.5 text-sm font-extrabold border-b-2 border-navy text-navy whitespace-nowrap">🚦 三道 Go/No-Go 閘門決議</button>
+          <button data-tab="actions" class="collab-tab px-4 py-2.5 text-sm font-bold border-b-2 border-transparent text-slate-500 hover:text-navy whitespace-nowrap">✅ 12 項搶標行動清單 <span id="actionProgressChip" class="ml-1 px-1.5 py-0.5 text-[11px] rounded bg-slate-200 text-slate-700">0/12</span></button>
+          <button data-tab="notes" class="collab-tab px-4 py-2.5 text-sm font-bold border-b-2 border-transparent text-slate-500 hover:text-navy whitespace-nowrap">📝 團隊筆記、釋疑與情報共編</button>
+        </div>
+
+        <!-- Tab 1: Gates -->
+        <div id="tab-gates" class="collab-panel p-5 sm:p-6">
+          <div id="gatesGrid" class="grid md:grid-cols-3 gap-4"></div>
+        </div>
+
+        <!-- Tab 2: Actions -->
+        <div id="tab-actions" class="collab-panel hidden p-5 sm:p-6 space-y-4">
+          <div class="flex items-center justify-between gap-4">
+            <div class="flex-1">
+              <div class="flex justify-between text-xs font-bold text-slate-600 mb-1">
+                <span>嘉義大學 115Q0803-1 備標整備進度</span>
+                <span id="actionProgressPct">0%</span>
+              </div>
+              <div class="w-full h-2.5 bg-slate-200 rounded-full overflow-hidden">
+                <div id="actionProgressBar" class="h-full bg-gradient-to-r from-royal to-electric transition-all duration-300" style="width:0%"></div>
+              </div>
+            </div>
+          </div>
+          <div id="actionsList" class="space-y-2.5"></div>
+        </div>
+
+        <!-- Tab 3: Team Notes -->
+        <div id="tab-notes" class="collab-panel hidden p-5 sm:p-6">
+          <div class="grid lg:grid-cols-12 gap-6">
+            <form id="noteForm" class="lg:col-span-5 bg-slate-50 border border-slate-200 rounded-xl p-4 space-y-3">
+              <h3 class="text-sm font-extrabold text-navy">新增團隊盡調筆記／釋疑條目</h3>
+              <div class="grid grid-cols-2 gap-2.5">
+                <div>
+                  <label class="block text-xs font-bold text-slate-600 mb-1">分類</label>
+                  <select id="noteCategory" class="w-full px-3 py-2 rounded-lg border border-slate-300 text-xs bg-white">
+                    <option value="盡調筆記">盡調筆記</option>
+                    <option value="標案釋疑">標案釋疑</option>
+                    <option value="現勘紀錄">現勘紀錄</option>
+                    <option value="競爭情報">競爭情報</option>
+                    <option value="會議決議">會議決議</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="block text-xs font-bold text-slate-600 mb-1">關聯頁碼（選填）</label>
+                  <input id="noteSlideNo" type="number" min="1" max="16" placeholder="1–16" class="w-full px-3 py-2 rounded-lg border border-slate-300 text-xs bg-white">
+                </div>
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-slate-600 mb-1">標題</label>
+                <input id="noteTitle" type="text" required placeholder="例：釋疑條目#1 統包延宕調費機制" class="w-full px-3 py-2 rounded-lg border border-slate-300 text-xs bg-white">
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-slate-600 mb-1">紀錄內容</label>
+                <textarea id="noteContent" rows="4" required placeholder="輸入查核佐證、現勘發現或對策建議..." class="w-full px-3 py-2 rounded-lg border border-slate-300 text-xs bg-white"></textarea>
+              </div>
+              <div class="flex items-center justify-between pt-1">
+                <label class="inline-flex items-center gap-2 text-xs text-slate-600 font-medium">
+                  <input id="noteShared" type="checkbox" checked class="rounded text-navy">
+                  <span>團隊共享（取消則僅本人可見）</span>
+                </label>
+                <button type="submit" class="px-4 py-2 rounded-lg bg-navy hover:bg-royal text-white text-xs font-extrabold transition">儲存紀錄</button>
+              </div>
+            </form>
+
+            <div class="lg:col-span-7 space-y-3">
+              <div class="flex items-center justify-between">
+                <h3 class="text-sm font-extrabold text-navy">團隊紀錄時間軸</h3>
+                <span id="notesCount" class="text-xs text-slate-500">0 筆紀錄</span>
+              </div>
+              <div id="notesList" class="space-y-2.5 max-h-[420px] overflow-y-auto scrollbar-thin pr-1"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="bg-navy text-slate-400 border-t border-slate-800 mt-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs">
+      <div>
+        <strong class="text-slate-200">大學微電網標案盡職調查暨決策簡報平台</strong> · 進能服／進金生能源內部知識資產
+      </div>
+      <div class="flex items-center gap-4">
+        <a href="docs/EXPANSION.md" target="_blank" class="hover:text-sky-300">擴充作業指南</a>
+        <a href="supabase/schema.sql" target="_blank" class="hover:text-sky-300">Supabase RLS SQL</a>
+        <span>純前端公開 anon key ✕ PostgreSQL RLS 安全架構</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== CTRL+K GLOBAL SEARCH MODAL ==================== -->
+  <div id="searchModal" class="hidden fixed inset-0 z-50 bg-navy/75 backdrop-blur-sm flex items-start justify-center pt-16 px-4">
+    <div class="bg-white w-full max-w-2xl rounded-2xl shadow-2xl overflow-hidden border border-slate-200">
+      <div class="p-4 border-b border-slate-200 flex items-center gap-3">
+        <span class="text-slate-400 text-lg">🔍</span>
+        <input id="modalSearchInput" type="text" placeholder="全域搜尋所有會議簡報頁碼、技術規格、風險與設備點位..." class="flex-1 text-sm focus:outline-none">
+        <button id="closeSearchModalBtn" class="px-2 py-1 text-xs rounded bg-slate-100 hover:bg-slate-200 text-slate-600 font-bold">ESC</button>
+      </div>
+      <div id="modalSearchResults" class="p-3 max-h-[65vh] overflow-y-auto scrollbar-thin space-y-2"></div>
+    </div>
+  </div>
+
+  <!-- ==================== SUPABASE AUTH MODAL ==================== -->
+  <div id="authModal" class="hidden fixed inset-0 z-50 bg-navy/75 backdrop-blur-sm flex items-center justify-center px-4">
+    <div class="bg-white w-full max-w-md rounded-2xl shadow-2xl overflow-hidden border border-slate-200">
+      <div class="bg-navy text-white px-5 py-4 flex items-center justify-between">
+        <div>
+          <h3 class="font-extrabold text-sm">團隊帳號登入 ／ Supabase 雲端同步</h3>
+          <p class="text-[11px] text-slate-300 mt-0.5">採用公開 anon key ＋ PostgreSQL RLS 行級安全保護</p>
+        </div>
+        <button id="closeAuthModalBtn" class="text-slate-300 hover:text-white font-bold">✕</button>
+      </div>
+      <div class="p-5 space-y-4">
+        <div id="authSignedInBox" class="hidden space-y-3">
+          <div class="p-3 rounded-lg bg-emerald-50 border border-emerald-200 text-xs text-emerald-800">
+            已登入團隊帳號：<strong id="signedInEmail"></strong><br>
+            所有閘門決議、行動清單與筆記皆已啟用 Supabase 雲端同步。
+          </div>
+          <button id="btnSignOut" class="w-full py-2.5 rounded-lg bg-slate-800 hover:bg-slate-900 text-white text-xs font-extrabold">登出（切回本機模式）</button>
+        </div>
+
+        <form id="authForm" class="space-y-3">
+          <div>
+            <label class="block text-xs font-bold text-slate-600 mb-1">團隊電子郵件 (Email)</label>
+            <input id="authEmail" type="email" required placeholder="member@acmepoint.com" class="w-full px-3 py-2 rounded-lg border border-slate-300 text-sm">
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-slate-600 mb-1">密碼 (Password)</label>
+            <input id="authPassword" type="password" required minlength="6" placeholder="至少 6 位字元" class="w-full px-3 py-2 rounded-lg border border-slate-300 text-sm">
+          </div>
+          <div id="authMsg" class="text-xs text-red-600 hidden"></div>
+          <div class="grid grid-cols-2 gap-2 pt-1">
+            <button type="submit" data-auth-action="signin" class="py-2.5 rounded-lg bg-navy hover:bg-royal text-white text-xs font-extrabold">登入雲端同步</button>
+            <button type="button" id="btnSignUp" class="py-2.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-navy text-xs font-extrabold border border-slate-300">註冊新團隊成員</button>
+          </div>
+          <p class="text-[11px] text-slate-500 leading-relaxed">
+            提醒：首次啟用雲端資料表前，請管理員於 Supabase SQL Editor 執行專案內附之 <a href="supabase/schema.sql" target="_blank" class="text-royal underline font-semibold">supabase/schema.sql</a>；若尚未建表，系統將自動以本機儲存運作零中斷。
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/portal.js"></script>
+</body>
+</html>
